@@ -7,63 +7,42 @@ use Illuminate\Http\Request;
 
 class InstaBookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $books = InstaBook::All();
         return view('instabook.index', compact('books'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-
+        //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(InstaBook $instaBook)
+    public function show(InstaBook $instabook)
     {
-        $instaBook['author'] = $instaBook->getAuthor();
-        $instaBook['genre'] = $instaBook->getGenre();
-        $instaBook['rate'] = $instaBook->getRate();
+        $instabook['author'] = $instabook->getAuthor();
+        $instabook['genre'] = $instabook->getGenre();
+        $instabook['rate'] = $instabook->getRate();
         
         return view('instabook.show', compact('instabook'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(InstaBook $instaBook)
+    public function edit(InstaBook $instabook)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, InstaBook $instaBook)
+    public function update(Request $request, InstaBook $instabook)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(InstaBook $instaBook)
+    public function destroy(InstaBook $instabook)
     {
         //
     }

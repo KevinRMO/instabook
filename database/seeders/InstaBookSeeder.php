@@ -109,18 +109,6 @@ class InstaBookSeeder extends Seeder
 
             $genre = Genre::firstOrCreate(['genre' => $book['genre']]);
 
-            // $randomUserId = array_rand($this->users);
-            // $userFullName = $this->users[$randomUserId];
-            // [$userFirstName, $userLastName] = explode(' ', $userFullName);
-            // $userMail = strtolower(str_replace(' ', '.', $userFullName)) . '@example.com';
-            // $userPassword = bcrypt(Str::random(10));
-
-            // $user = User::firstOrCreate([
-            //     'firstname' => $userFirstName,
-            //     'lastname' => $userLastName,
-            //     'email' => $userMail,
-            //     'password' => $userPassword,
-            // ]);
             $user_id = rand(1, 10);
             $rate_id = rand(1, 10);
 
