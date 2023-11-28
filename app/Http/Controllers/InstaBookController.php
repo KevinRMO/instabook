@@ -2,69 +2,105 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
+use App\Models\Genre;
+
 use App\Models\InstaBook;
 use Illuminate\Http\Request;
 
 class InstaBookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $books = InstaBook::All();
-        return view('instabook.index', compact('books'));
+
+        $instabook = InstaBook::all();
+        return view("instabook.index", compact("instabook"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $authors = Author::all();
+        $genres = Genre::all();
+        return view('instabook.create', compact("authors", "genres"));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'author' => 'required|exists:authors,id',
+            'genre' => 'required|exists:genres,id',
+            'year' => 'required',
+            'content' => 'required'
+            
+        ]);
+
+        InstaBook::create([
+            "title" => $request->title,
+            "author" => $request->author,
+            "genre" => $request->genre,
+            "year" => $request->year,
+            "content" => $request->content
+        ]);
+
+        return view()->route('instabook.create');
 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(InstaBook $instaBook)
+    public function show(InstaBook $instabook)
     {
-        $instaBook['author'] = $instaBook->getAuthor();
-        $instaBook['genre'] = $instaBook->getGenre();
-        $instaBook['rate'] = $instaBook->getRate();
-        
-        return view('instabook.show', compact('instabook'));
+
+        $title = ucfirst(strtolower($title));
+
+        if(array_key_exists($title, $this->instabook)){
+            $instabook = $this->instabook[$title];
+            $instabook['title'] = $title;
+            return view('instabook.show', compact('instabook'));
+        }else{
+            return view('instabook.index')->with([
+                'instabook' => $this->instabook,
+                'message' => "Le livre $title n'existe pas." 
+            ]);
+        }
+    }
+    public function edit(InstaBook $instabook)
+    {
+        $authors = Author::All();
+        $genres = Genre::All();
+        return view('instabook.create',compact("authors", "genres"));
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(InstaBook $instaBook)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, InstaBook $instaBook)
+    public function update(Request $request, string $title)
     {
-        //
+        $request->validate([
+            // 'image' => 'required',
+            'title' => 'required',
+            'author' => 'required|exists:author,id',
+            'genre' => 'required|exists:genre,id',
+            'year' => 'required',
+            'content' => 'content'
+            
+        ]);
     }
+    
+    public function destroy(InstaBook $instabook){
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(InstaBook $instaBook)
-    {
-        //
+
+            $title = ucfirst(strtolower($title));
+        if (array_key_exists($title, $this ->title)) {
+
+        unset ($this->instabook[$title]);
+
+        return view('instabook.index')-> with([
+            'instabook' => $this->instabook,
+            'message'=> "Le livre $title a été supprimé"
+        ]);
+        }
+        return view('instabook.index')-> with([
+            'instabook' => $this->instabook,
+            'message'=> "Le livre $title n'existe pas"
+        ]);
     }
 }

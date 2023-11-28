@@ -4,7 +4,7 @@
 
 @section('content')
 <ol>
-    @foreach ($books as $book)
+    @foreach ($instabook as $book)
     <li>
         {{$book->title}}
         {{$book->author_id}}

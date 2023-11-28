@@ -16,6 +16,10 @@
 
 
     <body class="font-sans antialiased">
+<<<<<<< Updated upstream
+=======
+        {{-- @include('layouts.navbar') --}}
+>>>>>>> Stashed changes
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
 
             <!-- Page Heading -->
@@ -29,11 +33,18 @@
 
             <!-- Page Content -->
             <main>
+<<<<<<< Updated upstream
                 @include('layouts.navbar')
                     {{-- @if (isset($slot))
                         {{ $slot }}
                     @endif --}}
                 @yield("content")
+=======
+            @yield ('content')
+               {{-- @if (isset($slot))
+                   {{ $slot }}
+               @endif --}}
+>>>>>>> Stashed changes
             </main>
         </div>
         <script src="/js/navbar.js"></script>

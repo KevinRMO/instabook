@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('instabook.index');
-});
+Route::get('/', [InstaBookController::class, 'index']);
+
+Route::resource('instabook', InstaBookController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
