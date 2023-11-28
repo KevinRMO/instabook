@@ -13,4 +13,9 @@ class Genre extends Model
     protected $fillable = [
         'genre'
     ];
+
+    public function instaBooks()
+    {
+        return $this->hasMany(InstaBook::class, 'genre_id');
+    }
 }

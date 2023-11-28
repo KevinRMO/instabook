@@ -14,4 +14,9 @@ class Author extends Model
         'lastname',
         'firstname',
     ];
+
+    public function instaBooks()
+    {
+        return $this->hasMany(InstaBook::class, 'author_id');
+    }
 }

@@ -6,10 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [InstaBookController::class, 'index']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::resource('instabook', InstaBookController::class);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

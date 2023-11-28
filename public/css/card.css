@@ -15,9 +15,9 @@ body {
   font-family: "Poppins", sans-serif;
 }
 section.card {
-  background: #000046;
-  background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
-  background: linear-gradient(to right, #1cb5e0, #000046);
+  background: #595959;
+  /* background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
+  background: linear-gradient(to right, #1cb5e0, #000046); */
   border-radius: 24px 24px 24px 48px;
   padding: 48px 48px 48px 308px;
   margin: 84px 0;
@@ -26,27 +26,34 @@ section.card {
   flex-direction: row;
   align-self: flex-start;
   position: relative;
-  box-shadow: 5px 0 0 0 rgba(204, 204, 204, 0.3),
-    -5px 0 0 0 rgba(204, 204, 204, 0.3), 0 5px 0 0 rgba(204, 204, 204, 0.3);
+  border: 3px solid #88aacc;
 }
 section.card .text-content {
   display: flex;
   flex-direction: column;
   width: calc(60vw - 192px);
 }
-section.card .text-content h3 {
+section.card .text-content h2 {
   margin: 0;
-  font-size: 1.5em;
-  max-width: 20ch;
-  color: #fff;
+  color: #88aacc;
+  transition: 0.5s;
+}
+
+h2:hover {
+  color: #61dafb;
+  transform: translateY(-5px);
+  font-size: 2.5rem;
+}
+h3 {
+  color: #88aacc;
 }
 section.card .text-content p {
   margin: 25px 0 24px;
-  color: #fff;
+  color: #88aacc;
 }
 section.card .text-content a {
-  border: 3px solid #f2f2f2;
-  color: #ffffff;
+  border: 3px solid #88aacc;
+  color: #88aacc;
   align-self: flex-start;
   text-decoration: none;
   padding: 16px 32px;
@@ -54,8 +61,8 @@ section.card .text-content a {
   transition: 400ms all;
 }
 section.card .text-content a:hover {
-  background: #051c5e;
-  color: white;
+  border: 3px solid white;
+  color: #61dafb;
 }
 section.card .visual {
   width: 240px;
@@ -65,6 +72,7 @@ section.card .visual {
   left: 24px;
   overflow: hidden;
   border-radius: 24px;
+  border: 3px solid #88aacc;
 }
 section.card .visual img {
   height: 110%;
