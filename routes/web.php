@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InstaBookController;
 use App\Http\Controllers\ProfileController;
+use App\Models\InstaBook;
 use Illuminate\Support\Facades\Route;
 
 

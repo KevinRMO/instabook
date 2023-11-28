@@ -59,7 +59,7 @@ class InstaBookController extends Controller
         $instabook['genre'] = $instabook->getGenre();
         $instabook['rate'] = $instabook->getRate();
         
-        return view('instabook.show', compact('instabook'));
+        return view('instabook.show')->with(['book'=> $instabook]);
     }
 
   
