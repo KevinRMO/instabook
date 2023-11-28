@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class InstaBook extends Model
 {
-    use HasFactory;
+    protected $fillable = ['title', 'author_id', 'genre_id', 'year', 'content'];
 }

@@ -25,8 +25,6 @@ class AuthorSeeder extends Seeder
      */
     public function run(): void
     {
-        
-
         foreach($this->authors as $author){
             Author::factory()->create([
                 'firstname' => $author['firstname'],

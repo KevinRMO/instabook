@@ -12,7 +12,8 @@ class InstaBookController extends Controller
      */
     public function index()
     {
-        //
+        $books = InstaBook::All();
+        return view('instabook.index', compact('books'));
     }
 
     /**
