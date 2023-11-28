@@ -42,7 +42,7 @@ nav {
 }
 .nav-links li a {
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 0.7vw;
     color: #88aacc;
 }
@@ -55,12 +55,39 @@ nav {
 .nav-links li a:hover::before {
     width: 80%;
 }
+/*Button search*/
+.search {
+    background-color: transparent;
+    border: 1.5px solid #88aacc;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    color: #88aacc;
+    cursor: pointer;
+}
+
+.search:hover {
+    color: #61dafb;
+    background-color: #595959;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
 /*Button filter*/
 .filtre {
     color: #88aacc;
     background-color: #595959;
-    font-weight: 700;
+    border: none;
+    font-size: 1.2em;
 }
+
+.filtre:hover {
+    color: #61dafb;
+    border-bottom: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
 /*Styling Buttons*/
 .login-button {
     background-color: transparent;
@@ -73,7 +100,7 @@ nav {
 }
 .login-button:hover {
     color: #131418;
-    background-color: #f2f5f7;
+    background-color: #595959;
     border: 1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
 }
