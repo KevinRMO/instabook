@@ -11,6 +11,7 @@
         @endforeach
     </ul>
     @endif
+     <div class="card">
         <form action={{route("instabook.store")}} method='post'>
         @csrf
           Titre du livre:  <input type='text' name='title' placeholder='Nom du Livre'><br>
@@ -50,4 +51,5 @@
             @endif
             <input type='submit' value='Créer'>
         </form>
+        </div>
 @endsection
