@@ -11,6 +11,7 @@
                     <h3>{{ $book->author->firstname }} {{ $book->author->lastname }}</h3>
                     <p>{{ $book->year }}, {{ $book->genre->genre }}</p>
                     <p>{{ $book->content }}</p>
+                    <p>{{$book->rate_id}}/10</p>
                     <a href="#">En savoir plus</a>
                 </div>
                 <div class="visual">
