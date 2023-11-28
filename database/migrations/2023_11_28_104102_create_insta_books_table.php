@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('year');
             $table->foreignIdFor(Genre::class)->constrained();
             $table->string('content');
-            $table->foreignIdFor(Rate::class)->constrained();
+            // $table->foreignIdFor(Rate::class)->constrained();
             $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
         });

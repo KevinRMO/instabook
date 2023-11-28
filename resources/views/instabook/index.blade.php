@@ -21,4 +21,5 @@
         </article>
         <br>
     @endforeach
+
 @endsection
