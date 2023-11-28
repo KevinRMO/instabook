@@ -16,7 +16,6 @@
 
 
     <body class="font-sans antialiased">
-        @extends('layouts.navbar')
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
 
             <!-- Page Heading -->
@@ -30,9 +29,11 @@
 
             <!-- Page Content -->
             <main>
-               @if (isset($slot))
-                   {{ $slot }}
-               @endif
+                @include('layouts.navbar')
+                    {{-- @if (isset($slot))
+                        {{ $slot }}
+                    @endif --}}
+                @yield("content")
             </main>
         </div>
         <script src="/js/navbar.js"></script>

@@ -9,11 +9,17 @@
         <div class="line3"></div>
     </div>
     <ul class="nav-links">
-        <li><a href="https://www.web-leb.com/code">Home</a></li>
-        <li><a href="https://www.web-leb.com/code">Solutions</a></li>
+        <li>
+            <select class="filtre">
+                <option class="filtre">Filtre</option>
+                <option class="filtre" a href="https://www.web-leb.com/code">Livre 1</option>
+                <option class="filtre" a href="https://www.web-leb.com/code">Livre 2</option>
+                <option class="filtre" a href="https://www.web-leb.com/code">Livre 3</option>
+            </select>
+        </li>
+        <li><a href="https://www.web-leb.com/code">Accueil</a></li>
+        <li><a href="https://www.web-leb.com/code">Créer un livre</a></li>
         <li><a href="https://www.web-leb.com/code">Products</a></li>
-        <li><a href="https://www.web-leb.com/code">Services</a></li>
-        <li><a href="https://www.web-leb.com/code">Contact Us</a></li>
         <li><a class="login-button" href="{{route('login')}}" :active="request()->routeIs('login')">Login</a></li>
     </ul>
 </nav>

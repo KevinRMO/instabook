@@ -28,7 +28,7 @@ class InstaBookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -36,7 +36,11 @@ class InstaBookController extends Controller
      */
     public function show(InstaBook $instaBook)
     {
-        //
+        $instaBook['author'] = $instaBook->getAuthor();
+        $instaBook['genre'] = $instaBook->getGenre();
+        $instaBook['rate'] = $instaBook->getRate();
+        
+        return view('instabook.show', compact('instabook'));
     }
 
     /**
