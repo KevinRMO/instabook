@@ -9,4 +9,13 @@ class Rate extends Model
 {
     use HasFactory;
     protected $table="rate";
+    
+    // protected $fillable = [
+    //     "rate",
+    // ];
+
+    // public function instaBooks()
+    // {
+    //     return $this->hasMany(InstaBook::class, 'rate_id');
+    // }
 }

@@ -28,11 +28,11 @@ section.show {
     position: relative;
     border: 3px solid #88aacc;
 }
-section.show .text-content {
+/* section.show .text-content {
     display: flex;
     flex-direction: column;
     width: calc(60vw - 192px);
-}
+} */
 section.show .text-content h2 {
     margin: 0;
     color: #88aacc;
@@ -67,13 +67,37 @@ section.show .visual {
 section.show .visual img {
     height: 110%;
 }
+.editButton,
+.destroyButton {
+    border: 3px solid #88aacc;
+    color: #88aacc;
+    background: #595959;
+    align-self: flex-start;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    transition: 400ms all;
+    font-size: 21px;
+}
+.editButton:hover,
+.destroyButton:hover {
+    border: 3px solid white;
+    color: #61dafb;
+    cursor: pointer;
+}
+.fa-solid {
+    color: #88aacc;
+}
+
+.form {
+    display: flex;
+    gap: 2%;
+}
 
 /*Index card*/
 
 section.card {
     background: #595959;
-    /* background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
-  background: linear-gradient(to right, #1cb5e0, #000046); */
     border-radius: 24px 24px 24px 48px;
     padding: 48px 48px 48px 308px;
     margin: 84px 0;
