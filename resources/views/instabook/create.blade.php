@@ -38,7 +38,6 @@
                 @endforeach
             </select>
         </div>
-<<<<<<< HEAD
         
       <div class="form-group">
     <label for="year">Année de publication :</label>
@@ -87,22 +86,4 @@
     </form>
 </div>
 
-=======
-        <div class="form-group">
-            <label for="year">Année de publication:</label>
-            <input type='year' name='year' id='year' class="form-control inpcreate">
-            @if($errors->has('year'))
-                <p>{{$errors->first('year')}}</p>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="content">Synopsis:</label>
-            <textarea name='content' id='content' class="form-control inpcreate"></textarea>
-            @if($errors->has('content'))
-                <p>{{$errors->first('content')}}</p>
-            @endif
-            Image: <input type="file" name="image_path" accept="image/*"><br>
-            <input type='submit' value='Créer'>
-        </form>
->>>>>>> 65e0620ff576c5c4e4b6bba22a15de02c08e963f
 @endsection
