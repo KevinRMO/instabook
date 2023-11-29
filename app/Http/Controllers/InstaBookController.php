@@ -30,7 +30,8 @@ class InstaBookController extends Controller
             'author' => 'required|exists:authors,id',
             'genre' => 'required|exists:genres,id',
             'year' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'image_path' => 'required'
         ]);
     
         // Récupérer l'auteur et le genre par leur ID
@@ -43,7 +44,8 @@ class InstaBookController extends Controller
             "author_id" => $authorId,
             "genre_id" => $genreId,
             "year" => $request->year,
-            "content" => $request->content
+            "content" => $request->content,
+            "image_path" =>$request->image_path
         ]);
     
         // Rediriger vers une page appropriée après l'enregistrement, par exemple, la page de détails du livre
@@ -77,7 +79,9 @@ class InstaBookController extends Controller
             'author_id' => 'required',
             'genre_id' => 'required',
             'year' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'image_path' => 'required'
+        
         ]);
 
         $instabook->title = ucwords(strtolower($request->title));
@@ -85,6 +89,7 @@ class InstaBookController extends Controller
         $instabook->genre_id = $request->genre_id;
         $instabook->year = $request->year;
         $instabook->content = $request->content;
+        $instabook->image_path = $request->image_path;
 
         $instabook->save();
 
@@ -92,20 +97,6 @@ class InstaBookController extends Controller
         return redirect(route('instabook.show', compact('instabook')));
     }
 
-
-    // public function update(Request $request, string $title)
-
-    // {
-    //     $request->validate([
-    //         // 'image' => 'required',
-    //         'title' => 'required',
-    //         'author' => 'required|exists:author,id',
-    //         'genre' => 'required|exists:genre,id',
-    //         'year' => 'required',
-    //         'content' => 'content'
-            
-    //     ]);
-    // }
 
     public function search(Request $request){
 
