@@ -11,9 +11,9 @@
     </div>
     <ul class="nav-links">
         <li>
-            <form action='' method='post'>
+            <form  action='{{ route('rechercher') }}' method='get'>
                 <input class='search' type='text' name='rechercher' placeholder='Votre recherche' value=''>
-                <input class='search' type='submit' value='Rechercher'>
+                <button class='search' type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </li>
         <li>

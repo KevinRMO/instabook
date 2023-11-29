@@ -101,6 +101,18 @@ class InstaBookController extends Controller
             
     //     ]);
     // }
+
+    public function search(Request $request){
+
+        $search = $request->input('rechercher');
+    
+        $instabook = InstaBook::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('content', 'LIKE', "%{$search}%")
+            ->get();
+    
+        return view('instabook.index', compact('instabook'));
+    }
     
     public function destroy(InstaBook $instabook){
 
