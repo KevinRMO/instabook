@@ -57,14 +57,12 @@ section.show .text-content a:hover {
     color: #61dafb;
 }
 section.show .visual {
-    width: 240px;
-    height: 100%;
+    width: 12em;
+    height: 20em;
     position: absolute;
-    top: -24px;
-    left: 24px;
+    top: -40px;
+    left: 30px;
     overflow: hidden;
-    border-radius: 24px;
-    border: 3px solid #88aacc;
 }
 section.show .visual img {
     height: 110%;
@@ -118,14 +116,13 @@ section.card .text-content a:hover {
     color: #61dafb;
 }
 section.card .visual {
-    width: 240px;
-    height: 100%;
+    width: 12em;
+    height: 20em;
     position: absolute;
-    top: -24px;
-    left: 24px;
+    top: -40px;
+    left: 30px;
     overflow: hidden;
-    border-radius: 24px;
-    border: 3px solid #88aacc;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 section.card .visual img {
     height: 110%;

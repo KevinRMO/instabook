@@ -12,11 +12,7 @@
                 <p>{{$instabook->year}} , {{$instabook->genre_id}}</p>
                 <p>{{$instabook->content}}</p>
             </div>
-            <div class="visual">
-                <img
-                    src="https://m.media-amazon.com/images/I/61HdYKaCHAL._SL1063_.jpg"
-                    alt />
-            </div>
+            <img class="visual" src={{ $instabook->image_path }}>
           
 
             <br>

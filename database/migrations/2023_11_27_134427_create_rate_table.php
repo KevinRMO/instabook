@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('rates', function (Blueprint $table) {
             $table->id();
             $table->integer('rate');
-            $table->foreignIdFor(InstaBook::class)->constrained();
             $table->timestamps();
         });
     }

@@ -13,9 +13,7 @@
                     <p>{{ $instabook->content }}</p>
                     <a href="{{route('instabook.show', $instabook->id)}}">En savoir plus</a>
                 </div>
-                <div class="visual">
-                    <img src={{ $instabook->image_path }}>
-                </div>
+                    <img class="visual" src={{ $instabook->image_path }}>
                 <br>
             </section>
         </article>
