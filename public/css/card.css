@@ -28,11 +28,11 @@ section.show {
     position: relative;
     border: 3px solid #88aacc;
 }
-section.show .text-content {
+/* section.show .text-content {
     display: flex;
     flex-direction: column;
     width: calc(60vw - 192px);
-}
+} */
 section.show .text-content h2 {
     margin: 0;
     color: #88aacc;
@@ -119,9 +119,6 @@ section.card .text-content h2 {
     margin: 0;
     color: #88aacc;
     transition: 0.5s;
-}
-h5 {
-    color: #88aacc;
 }
 h3 {
     color: #88aacc;
