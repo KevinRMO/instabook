@@ -12,7 +12,6 @@
                 <p>{{$instabook->year}} , {{$instabook->genre->genre}}</p>
                 <p>{{$instabook->content}}</p>
                 {{-- <p>{{$instabook->rate}}</p> --}}
-                
                 <div class="form">  
                     <form class="" action="{{route('instabook.edit', $instabook['id'])}}" method="get">
                             @csrf
@@ -27,7 +26,6 @@
             </div>
             <img class="visual" src={{ $instabook->image_path }}>
         </section>  
-
     </article>
 @endsection
 

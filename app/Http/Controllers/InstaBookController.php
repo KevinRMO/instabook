@@ -53,7 +53,7 @@ class InstaBookController extends Controller
             "genre_id" => $genreId,
             "year" => $request->year,
             "content" => $request->content,
-            "image_path" =>$request->image_path
+            "image_path" =>$image_path
         ]);
     
         // Rediriger vers une page appropriée après l'enregistrement, par exemple, la page de détails du livre
@@ -65,10 +65,10 @@ class InstaBookController extends Controller
 
     public function show(InstaBook $instabook)
     {
-        $allInstaBooks = InstaBook::all();
+        $instaBooks = InstaBook::all();
     
         return view('instabook.show')->with([
-            'instabooks' => $allInstaBooks,
+            'instabooks' => $instaBooks,
             'instabook' => $instabook,
         ]);
     }
@@ -109,7 +109,8 @@ class InstaBookController extends Controller
     }
 
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
 
         $search = $request->input('rechercher');
     
