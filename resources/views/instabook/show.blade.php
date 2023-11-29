@@ -22,15 +22,15 @@
             <div class="form">  
                 <form class="" action="{{route('instabook.edit', $instabook['id'])}}" method="get">
                         @csrf
-                        <button type="submit">Modifier</button>
-                        <i class="fa-solid fa-pencil"></i>
+                        <button class="editButton" type="submit"><i class="fa-solid fa-pencil"></i></button>
+                        
                         </button>
                     </form>
-                <form action="{{route('instabook.destroy', $instabook['id'])}}" method="post">
+                <form action="destroyButton"{{route('instabook.destroy', $instabook['id'])}} method="post">
                     @csrf
                     @method('delete')
-                    <button type="submit">Supprimer</button>
-                    <i class="fa-solid fa-trash"></i>
+                    <button class="destroyButton" type="submit"><i class="fa-solid fa-trash "></i></button>
+                    
                     </button>
                 </form>
             </div>
