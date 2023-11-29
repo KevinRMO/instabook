@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Accueil InstaBook')
+@section('title', 'Accueil Instabook')
 
 @section('content')
     @foreach ($instabook as $instabook)
