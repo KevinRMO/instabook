@@ -1,0 +1,205 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,300,500);
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    font-size: 21px;
+    background: #fff;
+    color: #000;
+    font-family: "Poppins", sans-serif;
+}
+
+/*Show card*/
+section.show {
+    background: #595959;
+    border-radius: 24px 24px 24px 48px;
+    padding: 48px 48px 48px 308px;
+    margin: 84px 0;
+    min-width: 640px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    position: relative;
+    border: 3px solid #88aacc;
+}
+/* section.show .text-content {
+    display: flex;
+    flex-direction: column;
+    width: calc(60vw - 192px);
+} */
+section.show .text-content h2 {
+    margin: 0;
+    color: #88aacc;
+    transition: 0.5s;
+}
+
+section.show .text-content p {
+    margin: 25px 0 24px;
+    color: #88aacc;
+}
+section.show .text-content a {
+    border: 3px solid #88aacc;
+    color: #88aacc;
+    align-self: flex-start;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    transition: 400ms all;
+}
+section.show .text-content a:hover {
+    border: 3px solid white;
+    color: #61dafb;
+}
+section.show .visual {
+    width: 12em;
+    height: 20em;
+    position: absolute;
+    top: -40px;
+    left: 30px;
+    overflow: hidden;
+}
+section.show .visual img {
+    height: 110%;
+}
+.editButton,
+.destroyButton {
+    border: 3px solid #88aacc;
+    color: #88aacc;
+    background: #595959;
+    align-self: flex-start;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    transition: 400ms all;
+    font-size: 21px;
+}
+.editButton:hover,
+.destroyButton:hover {
+    border: 3px solid white;
+    color: #61dafb;
+    cursor: pointer;
+}
+.fa-solid {
+    color: #88aacc;
+}
+
+.form {
+    display: flex;
+    gap: 2%;
+}
+
+/*Index card*/
+
+section.card {
+    background: #595959;
+    border-radius: 24px 24px 24px 48px;
+    padding: 48px 48px 48px 308px;
+    margin: 84px 0;
+    min-width: 640px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    position: relative;
+    border: 3px solid #88aacc;
+}
+section.card .text-content {
+    display: flex;
+    flex-direction: column;
+    width: calc(60vw - 192px);
+}
+section.card .text-content h2 {
+    margin: 0;
+    color: #88aacc;
+    transition: 0.5s;
+}
+
+h3 {
+    color: #88aacc;
+}
+section.card .text-content p {
+    margin: 25px 0 24px;
+    color: #88aacc;
+}
+section.card .text-content a {
+    border: 3px solid #88aacc;
+    color: #88aacc;
+    align-self: flex-start;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    transition: 400ms all;
+}
+section.card .text-content a:hover {
+    border: 3px solid white;
+    color: #61dafb;
+}
+section.card .visual {
+    width: 12em;
+    height: 20em;
+    position: absolute;
+    top: -40px;
+    left: 30px;
+    overflow: hidden;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+section.card .visual img {
+    height: 110%;
+}
+article {
+    margin: auto;
+    display: block;
+    width: calc(60vw + 248px);
+    max-width: calc(920px + 248px);
+    min-width: calc(640px + 248px);
+}
+@media all and (max-width: 1100px) {
+    body {
+        padding: 96px 48px 24px;
+    }
+    article {
+        width: 100%;
+        min-width: 100%;
+    }
+    section.card {
+        min-width: 100%;
+    }
+    section.card .text-content {
+        width: 100%;
+    }
+}
+@media all and (max-width: 720px) {
+    body {
+        padding: 48px 24px 0;
+    }
+    section.card {
+        margin: 64px 0;
+        padding: 88px 36px 36px;
+        flex-direction: column;
+        border-radius: 24px;
+    }
+    section.card .text-content h3 {
+        max-width: calc(100% - 150px);
+        font-size: 1em;
+    }
+    section.card .text-content p,
+    section.card .text-content a {
+        font-size: 0.8em;
+    }
+    section.card .visual {
+        width: 150px;
+        height: 150px;
+        right: 16px;
+        left: auto;
+        border-radius: 50%;
+    }
+    section.card .visual img {
+        width: 100%;
+        height: auto;
+    }
+}

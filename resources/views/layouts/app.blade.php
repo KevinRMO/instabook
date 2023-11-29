@@ -5,10 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="/css/navbar.css" />
+        <link rel="stylesheet" href="/css/card.css" />
+        <link rel="stylesheet" href="/css/create.css">
         <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <script src="https://kit.fontawesome.com/f9d009cb2a.js" crossorigin="anonymous"></script>
 
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
@@ -16,10 +20,11 @@
 
 
     <body class="font-sans antialiased">
-<<<<<<< Updated upstream
-=======
+
         {{-- @include('layouts.navbar') --}}
->>>>>>> Stashed changes
+
+
+
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
 
             <!-- Page Heading -->
@@ -33,18 +38,13 @@
 
             <!-- Page Content -->
             <main>
-<<<<<<< Updated upstream
+
                 @include('layouts.navbar')
                     {{-- @if (isset($slot))
                         {{ $slot }}
                     @endif --}}
                 @yield("content")
-=======
-            @yield ('content')
-               {{-- @if (isset($slot))
-                   {{ $slot }}
-               @endif --}}
->>>>>>> Stashed changes
+
             </main>
         </div>
         <script src="/js/navbar.js"></script>

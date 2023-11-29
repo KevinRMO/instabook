@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Author;
-use App\Models\Rate;
 use App\Models\Genre;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
@@ -17,15 +16,14 @@ return new class extends Migration
     {
         Schema::create('insta_books', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
             $table->string('title');
             $table->foreignIdFor(Author::class)->constrained();
             $table->integer('year');
             $table->foreignIdFor(Genre::class)->constrained();
             $table->string('content');
-            $table->foreignIdFor(Rate::class)->constrained();
             $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
+            $table->string('image_path');
         });
     }
 

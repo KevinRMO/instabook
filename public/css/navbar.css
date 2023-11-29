@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
 }
 nav {
-    font-size: 1.2em;
+    font-size: 1em;
     height: 6rem;
     width: 100vw;
     background-color: #595959;
@@ -42,12 +42,12 @@ nav {
 }
 .nav-links li a {
     text-decoration: none;
-    font-weight: 600;
     margin: 0 0.7vw;
     color: #88aacc;
 }
 .nav-links li a:hover {
     color: #61dafb;
+    transition: all ease-in-out .3s;
 }
 .nav-links li {
     position: relative;
@@ -62,7 +62,7 @@ nav {
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     margin-left: 2vw;
-    font-size: 1rem;
+    font-size: 1em;
     color: #88aacc;
     cursor: pointer;
 }
@@ -79,7 +79,7 @@ nav {
     color: #88aacc;
     background-color: #595959;
     border: none;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .filtre:hover {
@@ -103,6 +103,22 @@ nav {
     background-color: #595959;
     border: 1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
+}
+.logout-button {
+    background-color: transparent;
+    border: 1.5px solid #88aacc;
+    color: #88aacc;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.logout-button:hover {
+    color: #61dafb;
+    background-color: #595959;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 0.3s;
 }
 .join-button {
     color: #131418;
