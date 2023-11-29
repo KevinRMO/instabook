@@ -91,6 +91,34 @@ class InstaBookController extends Controller
         // return redirect(route('pokemon.index'));
         return redirect(route('instabook.show', compact('instabook')));
     }
+
+
+    // public function update(Request $request, string $title)
+
+    // {
+    //     $request->validate([
+    //         // 'image' => 'required',
+    //         'title' => 'required',
+    //         'author' => 'required|exists:author,id',
+    //         'genre' => 'required|exists:genre,id',
+    //         'year' => 'required',
+    //         'content' => 'content'
+            
+    //     ]);
+    // }
+
+    public function search(Request $request){
+
+        $search = $request->input('rechercher');
+    
+        $instabook = InstaBook::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('content', 'LIKE', "%{$search}%")
+            ->get();
+    
+        return view('instabook.index', compact('instabook'));
+    }
+
     
     // public function destroy(string $id){
 
