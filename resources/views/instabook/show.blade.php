@@ -5,12 +5,12 @@
 @section('content')
 
     <article>
-        <section class="card">
+        <section class="show">
             <div class="text-content">
-                <h2> {{$book->title}}</h2>
-                <h5>{{$book->author}}</h5>
-                <p>{{$book->year}} , {{$book->genre_id}}</p>
-                <p>{{$book->content}}</p>
+                <h2> {{$instabook->title}}</h2>
+                <h5>{{$instabook->author}}</h5>
+                <p>{{$instabook->year}} , {{$instabook->genre_id}}</p>
+                <p>{{$instabook->content}}</p>
             </div>
             <div class="visual">
                 <img
@@ -18,21 +18,23 @@
                     alt />
             </div>
           
-        <br>    
-        <form class="" action="{{route('instabook.edit', $instabook['id'])}}" method="get">
-            @csrf
-            <button type="submit">Modifier</button>
-            <i class="fa-solid fa-pencil"></i>
-            </button>
-        </form>
-    <form action="{{route('blog.destroy', $blog['id'])}}" method="post">
-        @csrf
-        @method('delete')
-        <button type="submit">Supprimer</button>
-        <i class="fa-solid fa-trash"></i>
-        </button>
-    </form>
-    </section>  
+            <br>
+            <div class="form">  
+                <form class="" action="{{route('instabook.edit', $instabook['id'])}}" method="get">
+                        @csrf
+                        <button type="submit">Modifier</button>
+                        <i class="fa-solid fa-pencil"></i>
+                        </button>
+                    </form>
+                <form action="{{route('instabook.destroy', $instabook['id'])}}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button type="submit">Supprimer</button>
+                    <i class="fa-solid fa-trash"></i>
+                    </button>
+                </form>
+            </div>
+        </section>  
     </article>
 @endsection
 

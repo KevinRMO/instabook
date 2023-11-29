@@ -22,7 +22,7 @@
                 <option class="filtre" href="#">Policier</option>
             </select>
         </li>
-        <li><a href="#">Accueil</a></li>
+        <li><a href="{{ route('instabook.index') }}">Accueil</a></li>
         <li><a href="/instabook/create">Créer un livre</a></li>
 
         @guest
