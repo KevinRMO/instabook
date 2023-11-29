@@ -26,24 +26,6 @@
                 </div>
             </div>
             <img class="visual" src={{ $instabook->image_path }}>
-          
-
-            <br>
-            <div class="form">  
-                <form class="" action="{{route('instabook.edit', $instabook['id'])}}" method="get">
-                        @csrf
-                        <button type="submit">Modifier</button>
-                        <i class="fa-solid fa-pencil"></i>
-                        </button>
-                    </form>
-                <form action="{{route('instabook.destroy', $instabook['id'])}}" method="post">
-                    @csrf
-                    @method('delete')
-                    <button type="submit">Supprimer</button>
-                    <i class="fa-solid fa-trash"></i>
-                    </button>
-                </form>
-            </div>
         </section>  
 
     </article>
