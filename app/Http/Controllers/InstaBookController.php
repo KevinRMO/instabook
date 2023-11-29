@@ -26,32 +26,45 @@ class InstaBookController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'user_id'=> 'required',
             'title' => 'required',
             'author' => 'required|exists:authors,id',
             'genre' => 'required|exists:genres,id',
             'year' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'image_path' => 'required'
         ]);
     
         // Récupérer l'auteur et le genre par leur ID
         $authorId = $request->input('author');
         $genreId = $request->input('genre');
-    
+
+        $image_path = null;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image_path = $image->storeAs('images', $imageName, 'public');
+        }
         // Enregistrer les données dans la table InstaBook avec les clés étrangères
         InstaBook::create([
+            "user_id" => $request->user_id,
             "title" => $request->title,
             "author_id" => $authorId,
             "genre_id" => $genreId,
             "year" => $request->year,
-            "content" => $request->content
+            "content" => $request->content,
+            "image_path" =>$request->image_path
         ]);
     
         // Rediriger vers une page appropriée après l'enregistrement, par exemple, la page de détails du livre
-        return redirect()->route('instabook.index');
+        return redirect()->route('instabook.show', ['id' => $id]);
+
     }
+   
+
+
     public function show(InstaBook $instabook)
     {
-        // Récupérer tous les InstaBooks depuis la base de données
         $allInstaBooks = InstaBook::all();
     
         return view('instabook.show')->with([
@@ -73,39 +86,28 @@ class InstaBookController extends Controller
     public function update(Request $request, InstaBook $instabook)
     {
         $request->validate([
+            'user_id'=> 'required',
             'title' => 'required',
             'author_id' => 'required',
             'genre_id' => 'required',
             'year' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'image_path' => 'required'
+        
         ]);
-
+        $instabook->user_id = $request->user_id;
         $instabook->title = ucwords(strtolower($request->title));
         $instabook->author_id = $request->author_id;
         $instabook->genre_id = $request->genre_id;
         $instabook->year = $request->year;
         $instabook->content = $request->content;
+        $instabook->image_path = $request->image_path;
 
         $instabook->save();
 
-        // return redirect(route('pokemon.index'));
         return redirect(route('instabook.show', compact('instabook')));
     }
 
-
-    // public function update(Request $request, string $title)
-
-    // {
-    //     $request->validate([
-    //         // 'image' => 'required',
-    //         'title' => 'required',
-    //         'author' => 'required|exists:author,id',
-    //         'genre' => 'required|exists:genre,id',
-    //         'year' => 'required',
-    //         'content' => 'content'
-            
-    //     ]);
-    // }
 
     public function search(Request $request){
 

@@ -38,6 +38,56 @@
                 @endforeach
             </select>
         </div>
+<<<<<<< HEAD
+        
+      <div class="form-group">
+    <label for="year">Année de publication :</label>
+    <input type="year" name="year" id="year" class="form-control inpcreate">
+    @if($errors->has('year'))
+        <p>{{$errors->first('year')}}</p>
+    @endif
+</div>
+
+<div class="form-group">
+    <label for="content">Synopsis :</label>
+    <textarea name="content" id="content" class="form-control inpcreate"></textarea>
+    @if($errors->has('content'))
+        <p>{{$errors->first('content')}}</p>
+    @endif
+</div>
+
+<div class="form-group">
+    <label for="image_path">Image :</label>
+    <input type="file" name="image_path" id="image_path" class="form-control-file" accept="image/jpeg" onchange="previewImage(event)">
+    @if($errors->has('image_path'))
+        <p>{{$errors->first('image_path')}}</p>
+    @endif
+</div>
+
+<div class="form-group">
+    <img id="imagePreview" src="#" alt="Aperçu de l'image" style="display: none; max-width: 200px; max-height: 200px;">
+</div>
+
+<script>
+    function previewImage(event) {
+        var input = event.target;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var imagePreview = document.getElementById('imagePreview');
+                imagePreview.style.display = 'block';
+                imagePreview.src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+        <input type='submit' value='Créer' class="btn btn-primary inpcreate">
+    </form>
+</div>
+
+=======
         <div class="form-group">
             <label for="year">Année de publication:</label>
             <input type='year' name='year' id='year' class="form-control inpcreate">
@@ -51,9 +101,8 @@
             @if($errors->has('content'))
                 <p>{{$errors->first('content')}}</p>
             @endif
-        </div>
-        <input type='submit' value='Créer' class="btn btn-primary inpcreate">
-    </form>
-</div>
-
+            Image: <input type="file" name="image_path" accept="image/*"><br>
+            <input type='submit' value='Créer'>
+        </form>
+>>>>>>> 65e0620ff576c5c4e4b6bba22a15de02c08e963f
 @endsection
