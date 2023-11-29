@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="/css/navbar.css" />
         <link rel="stylesheet" href="/css/card.css" />
+        <link rel="stylesheet" href="/css/create.css">
         <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

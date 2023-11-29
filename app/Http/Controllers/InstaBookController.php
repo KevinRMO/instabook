@@ -25,36 +25,39 @@ class InstaBookController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'title' => 'required',
             'author' => 'required|exists:authors,id',
             'genre' => 'required|exists:genres,id',
             'year' => 'required',
             'content' => 'required'
-            
         ]);
-
+    
+        // Récupérer l'auteur et le genre par leur ID
+        $authorId = $request->input('author');
+        $genreId = $request->input('genre');
+    
+        // Enregistrer les données dans la table InstaBook avec les clés étrangères
         InstaBook::create([
             "title" => $request->title,
-            "author" => $request->author,
-            "genre" => $request->genre,
+            "author_id" => $authorId,
+            "genre_id" => $genreId,
             "year" => $request->year,
             "content" => $request->content
         ]);
-
-        // return view()->route('instabook.create');
-
+    
+        // Rediriger vers une page appropriée après l'enregistrement, par exemple, la page de détails du livre
+        return redirect()->route('instabook.index');
     }
-
     public function show(InstaBook $instabook)
     {
-
-        $instabook['author'] = $instabook->getAuthor();
-        $instabook['genre'] = $instabook->getGenre();
-        // $instabook['rate'] = $instabook->getRate();
-        
-        return view('instabook.show')->with(['instabook'=> $instabook]);
+        // Récupérer tous les InstaBooks depuis la base de données
+        $allInstaBooks = InstaBook::all();
+    
+        return view('instabook.show')->with([
+            'instabooks' => $allInstaBooks,
+            'instabook' => $instabook,
+        ]);
     }
 
   

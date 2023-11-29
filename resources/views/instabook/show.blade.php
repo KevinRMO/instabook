@@ -8,7 +8,7 @@
         <section class="card">
             <div class="text-content">
                 <h2> {{$instabook->title}}</h2>
-                <h5>{{$instabook->author}}</h5>
+                <h5>{{ $instabook->author->firstname }} {{ $instabook->author->lastname }}</h5>
                 <p>{{$instabook->year}} , {{$instabook->genre_id}}</p>
                 <p>{{$instabook->content}}</p>
             </div>
