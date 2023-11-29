@@ -29,28 +29,34 @@ class InstaBookController extends Controller
     }
 
     public function store(Request $request)
-    {
+{
+    $request->validate([
+        'title' => 'required',
+        'author' => 'required|exists:authors,lastname',
+        'genre' => 'required|exists:genres,genre',
+        'year' => 'required',
+        'content' => 'required',
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-        $request->validate([
-            'title' => 'required',
-            'author' => 'required|exists:authors,id',
-            'genre' => 'required|exists:genres,id',
-            'year' => 'required',
-            'content' => 'required'
-            
-        ]);
-
-        InstaBook::create([
-            "title" => $request->title,
-            "author" => $request->author,
-            "genre" => $request->genre,
-            "year" => $request->year,
-            "content" => $request->content
-        ]);
-
-        return view()->route('instabook.create');
-
+    $image_path = null;
+    if ($request->hasFile('image')) {
+        $image = $request->file('image');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image_path = $image->storeAs('images', $imageName, 'public');
     }
+
+    InstaBook::create([
+        "title" => $request->title,
+        "author" => $request->author,
+        "genre" => $request->genre,
+        "year" => $request->year,
+        "content" => $request->content,
+        "image_path" => $image_path,
+    ]);
+
+    return redirect()->route('instabook.create');
+}
 
     public function show(InstaBook $instabook)
     {

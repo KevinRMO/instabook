@@ -97,11 +97,6 @@ section.card .text-content h2 {
     transition: 0.5s;
 }
 
-h2:hover {
-    color: #61dafb;
-    transform: translateY(-5px);
-    font-size: 2.5rem;
-}
 h3 {
     color: #88aacc;
 }

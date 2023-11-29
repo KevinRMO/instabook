@@ -48,6 +48,7 @@
              @if($errors->has('content'))
                 <p>{{$errors->first('content')}}</p>
             @endif
+            Image: <input type="file" name="image" accept="image/*"><br>
             <input type='submit' value='Créer'>
         </form>
 @endsection
