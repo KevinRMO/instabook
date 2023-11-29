@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Accueil InstaBook')
+@section('title', 'Accueil Instabook')
 
 @section('content')
     @foreach ($instabook as $instabook)
@@ -14,7 +14,7 @@
                     <a href="{{route('instabook.show', $instabook->id)}}">En savoir plus</a>
                 </div>
                 <div class="visual">
-                    <img src="https://m.media-amazon.com/images/I/61HdYKaCHAL._SL1063_.jpg" alt />
+                     {{ $instabook->image_path }}
                 </div>
                 <br>
             </section>

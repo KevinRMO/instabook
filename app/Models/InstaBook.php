@@ -29,9 +29,9 @@ class InstaBook extends Model
         return $this->belongsTo(Genre::class, 'genre_id');
     }
 
-    public function getRate()
-    {
-        return Rate::select()->where('id','=',$this->rate_id)->get();
-    }
+    // public function getRate()
+    // {
+    //     return Rate::select()->where('id','=',$this->rate_id)->get();
+    // }
 
 }
