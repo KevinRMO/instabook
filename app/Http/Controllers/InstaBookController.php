@@ -26,6 +26,7 @@ class InstaBookController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'user_id'=> 'required',
             'title' => 'required',
             'author' => 'required|exists:authors,id',
             'genre' => 'required|exists:genres,id',
@@ -40,6 +41,7 @@ class InstaBookController extends Controller
     
         // Enregistrer les données dans la table InstaBook avec les clés étrangères
         InstaBook::create([
+            "user_id" => $request->user_id,
             "title" => $request->title,
             "author_id" => $authorId,
             "genre_id" => $genreId,
@@ -49,7 +51,8 @@ class InstaBookController extends Controller
         ]);
     
         // Rediriger vers une page appropriée après l'enregistrement, par exemple, la page de détails du livre
-        return redirect()->route('instabook.index');
+        return redirect()->route('instabook.show', ['id' => $id]);
+
     }
     public function show(InstaBook $instabook)
     {
@@ -75,6 +78,7 @@ class InstaBookController extends Controller
     public function update(Request $request, InstaBook $instabook)
     {
         $request->validate([
+            'user_id'=> 'required',
             'title' => 'required',
             'author_id' => 'required',
             'genre_id' => 'required',
@@ -83,7 +87,7 @@ class InstaBookController extends Controller
             'image_path' => 'required'
         
         ]);
-
+        $instabook->user_id = $request->user_id;
         $instabook->title = ucwords(strtolower($request->title));
         $instabook->author_id = $request->author_id;
         $instabook->genre_id = $request->genre_id;
