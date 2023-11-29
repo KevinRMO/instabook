@@ -47,6 +47,7 @@ nav {
 }
 .nav-links li a:hover {
     color: #61dafb;
+    transition: all ease-in-out .3s;
 }
 .nav-links li {
     position: relative;
@@ -102,6 +103,22 @@ nav {
     background-color: #595959;
     border: 1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
+}
+.logout-button {
+    background-color: transparent;
+    border: 1.5px solid #88aacc;
+    color: #88aacc;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.logout-button:hover {
+    color: #61dafb;
+    background-color: #595959;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 0.3s;
 }
 .join-button {
     color: #131418;

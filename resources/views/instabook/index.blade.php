@@ -14,7 +14,7 @@
                     <a href="{{route('instabook.show', $instabook->id)}}">En savoir plus</a>
                 </div>
                 <div class="visual">
-                     {{ $instabook->image_path }}
+                    <img src={{ $instabook->image_path }}>
                 </div>
                 <br>
             </section>

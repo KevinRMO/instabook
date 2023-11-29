@@ -38,7 +38,13 @@ class InstaBookController extends Controller
         // Récupérer l'auteur et le genre par leur ID
         $authorId = $request->input('author');
         $genreId = $request->input('genre');
-    
+
+        $image_path = null;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image_path = $image->storeAs('images', $imageName, 'public');
+        }
         // Enregistrer les données dans la table InstaBook avec les clés étrangères
         InstaBook::create([
             "user_id" => $request->user_id,
@@ -54,9 +60,11 @@ class InstaBookController extends Controller
         return redirect()->route('instabook.show', ['id' => $id]);
 
     }
+   
+
+
     public function show(InstaBook $instabook)
     {
-        // Récupérer tous les InstaBooks depuis la base de données
         $allInstaBooks = InstaBook::all();
     
         return view('instabook.show')->with([
@@ -97,7 +105,6 @@ class InstaBookController extends Controller
 
         $instabook->save();
 
-        // return redirect(route('pokemon.index'));
         return redirect(route('instabook.show', compact('instabook')));
     }
 
