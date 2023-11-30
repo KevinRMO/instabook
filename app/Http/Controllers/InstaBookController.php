@@ -119,9 +119,13 @@ class InstaBookController extends Controller
         $search = $request->input('rechercher');
     
         $instabook = InstaBook::query()
-            ->where('title', 'LIKE', "%{$search}%")
-            ->orWhere('content', 'LIKE', "%{$search}%")
-            ->get();
+        ->join('authors', 'author_id', '=', 'authors.id')
+        ->join('genres', 'genre_id', '=', 'genres.id')
+        ->where('title', 'LIKE', "%{$search}%")
+        ->orWhere('lastname', 'LIKE', "%{$search}%")
+        ->orWhere('firstname', 'LIKE', "%{$search}%")
+        ->orWhere('genre', 'LIKE', "%{$search}%")
+        ->get();
     
         return view('instabook.index', compact('instabook'));
     }
