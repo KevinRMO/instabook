@@ -12,7 +12,10 @@ class InstaBookController extends Controller
 {
     public function index()
     {
-        $instabooks = InstaBook::All();
+        $instabooks = InstaBook::select('insta_books.*', 'genres.genre')
+        ->join('genres', 'genre_id', '=', 'genres.id')
+        ->get();
+        // dd($instabooks);
         return view('instabook.index', compact('instabooks'));
     }
 
@@ -68,10 +71,7 @@ class InstaBookController extends Controller
 
     public function show(InstaBook $instabook)
     {
-        $instaBooks = InstaBook::all();
-    
         return view('instabook.show')->with([
-            'instabooks' => $instaBooks,
             'instabook' => $instabook,
         ]);
     }
@@ -117,8 +117,8 @@ class InstaBookController extends Controller
     {
 
         $search = $request->input('rechercher');
-    
-        $instabook = InstaBook::query()
+        
+        $instabooks = InstaBook::select('insta_books.*', 'authors.id as author_id', 'genres.id as genre_id', 'genres.genre')
         ->join('authors', 'author_id', '=', 'authors.id')
         ->join('genres', 'genre_id', '=', 'genres.id')
         ->where('title', 'LIKE', "%{$search}%")
@@ -127,7 +127,7 @@ class InstaBookController extends Controller
         ->orWhere('genre', 'LIKE', "%{$search}%")
         ->get();
     
-        return view('instabook.index', compact('instabook'));
+        return view('instabook.index', compact('instabooks'));
     }
 
         public function destroy($id)
