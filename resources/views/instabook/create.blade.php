@@ -16,6 +16,7 @@
     <form action="{{ route('instabook.store') }}" method='post' class="my-form">
         @csrf
         <div class="form-group">
+         <input type="hidden" name="user_id" value="{{ auth()->id() }}">
             <label for="title">Titre du livre:</label>
             <input type='text' name='title' id='title' placeholder='Nom du Livre' class="form-control inpcreate">
             @if($errors->has('title'))

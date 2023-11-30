@@ -3,16 +3,6 @@
 @section('title', 'Accueil Instabook')
 
 @section('content')
-<<<<<<< HEAD
-<ol>
-    @foreach ($instabook as $book)
-    <li>
-        {{$book->title}}
-        {{$book->author_id}}
-    </li>
-    @endforeach  
-</ol>
-=======
     @foreach ($instabook as $instabook)
         <article>
             <section class="card">
@@ -30,5 +20,4 @@
         <br>
     @endforeach
 
->>>>>>> 1231ebd0cc936ec9deee97971a39f6952b5240e6
 @endsection

@@ -50,4 +50,8 @@ class User extends Authenticatable
             'email' => 'required|email|unique:users,email',
         ];
     }
+    public function instabook()
+    {
+        return $this->hasMany(InstaBook::class);
+    }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class InstaBook extends Model
 {
-    protected $fillable = ['title', 'author_id', 'genre_id', 'year', 'content'];
+    protected $fillable = ['title', 'author_id', 'genre_id', 'year', 'content','user_id'];
 
     public function getAuthor()
     {
@@ -33,5 +33,9 @@ class InstaBook extends Model
     // {
     //     return Rate::select()->where('id','=',$this->rate_id)->get();
     // }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }
