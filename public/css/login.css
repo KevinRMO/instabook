@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #88aacc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo,
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+/*Couleur de fond de la card login*/
+body div.login div {
+    background-color: #ffffff;
+}
+
+/* Couleur des textes*/
+body div.login div form div:nth-child(2) label,
+body div.login div form div:nth-child(3) label,
+body div.login div form div.block.mt-4 label span,
+body div.login div form div.flex.items-center.justify-end.mt-4 a {
+    color: #88aacc;
+}
+
+/* Couleur dans l'input*/
+#email,
+#password {
+    background-color: #ffffff;
+    border-color: #88aacc;
+    color: #88aacc;
+}
+
+/*Couleur checkbox*/
+#remember_me {
+    background-color: #88aacc;
+}
+
+/* Couleur du bouton login */
+body div.login div form div.flex.items-center.justify-end.mt-4 button {
+    border-color: #88aacc;
+    color: #88aacc;
+    background-color: #ffffff;
+}
+
+body div.login div form div.flex.items-center.justify-end.mt-4 button:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    background-color: #88aacc;
+}

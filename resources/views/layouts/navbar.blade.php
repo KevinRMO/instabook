@@ -1,6 +1,6 @@
 <nav>
     <div class="logo" style="display: flex; align-items: center;">
-        <a href="{{ route('instabook.index') }}">
+        <a href="/">
             <img src="https://i.ibb.co/x7jy2Sw/instabook-logo.png" alt="instabook-logo">
         </a>
     </div>
@@ -22,7 +22,7 @@
                 <option class="filtre" href="#">Policier</option>
             </select>
         </li>
-        <li><a href="{{ route('instabook.index') }}">Accueil</a></li>
+        <li><a href="/">Accueil</a></li>
         <li><a href="/instabook/create">Créer un livre</a></li>
 
         @guest

@@ -17,10 +17,12 @@
                             @csrf
                             <button class="editButton" type="submit"><i class="fa-solid fa-pencil"></i></button>                            
                     </form>
-                    <form action="destroyButton"{{route('instabook.destroy', $instabook['id'])}} method="post">
+                    <form action="{{ route('instabook.destroy', $instabook['id']) }}" method="post">
                         @csrf
                         @method('delete')
-                        <button class="destroyButton" type="submit"><i class="fa-solid fa-trash "></i></button>
+                        <button class="destroyButton" type="submit" onclick="return confirm('Voulez-vous vraiment supprimer ce livre ?')">
+                            <i class="fa-solid fa-trash "></i>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -28,4 +30,5 @@
         </section>  
     </article>
 @endsection
+
 

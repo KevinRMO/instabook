@@ -126,6 +126,18 @@ class InstaBookController extends Controller
         return view('instabook.index', compact('instabook'));
     }
 
+        public function destroy($id)
+    {
+        // Trouver le livre à supprimer
+        $instabook = InstaBook::findOrFail($id);
+
+        // Supprimer le livre
+        $instabook->delete();
+
+        // Redirection après la suppression
+        return redirect()->route('instabook.index');
+    }
+
     
     // public function destroy(string $id){
 

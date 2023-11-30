@@ -47,7 +47,7 @@ nav {
 }
 .nav-links li a:hover {
     color: #61dafb;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out 0.3s;
 }
 .nav-links li {
     position: relative;
