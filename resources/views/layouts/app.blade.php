@@ -11,12 +11,11 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
         <script src="https://kit.fontawesome.com/f9d009cb2a.js" crossorigin="anonymous"></script>
-
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
+<<<<<<< HEAD
 
 
     <body class="font-sans antialiased">
@@ -25,8 +24,10 @@
 
 
 
+=======
+    <body class="font-sans antialiased center-card">
+>>>>>>> fbd0e06747e6a9ac05416234dc16fbdc0eeb09a1
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white dark:bg-gray-800 shadow">
@@ -35,16 +36,10 @@
                     </div>
                 </header>
             @endif
-
             <!-- Page Content -->
             <main>
-
                 @include('layouts.navbar')
-                    {{-- @if (isset($slot))
-                        {{ $slot }}
-                    @endif --}}
                 @yield("content")
-
             </main>
         </div>
         <script src="/js/navbar.js"></script>

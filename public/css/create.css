@@ -1,8 +1,6 @@
-/* * {
-    background-color: #ccc;
-} */
+
+
 .card{
-   
     padding-top: 5vh;
 }
 
@@ -20,52 +18,45 @@ textarea {
 
 .inpcreate {
     color:#595959;
-
 }
-/* Styles pour le formulaire */
+
 .my-form {
     background-color: #595959;
-    width: 50%; /* Largeur du formulaire */
-    margin: auto; /* Centrage horizontal */
-    padding: 4vh; /* Espacement interne */
-    border: 1px solid #595959; /* Bordure */
-    border-radius: 8px; /* Coins arrondis */
+    width: 50%;
+    margin: auto;
+    padding: 4vh;
+    border: 1px solid #595959;
+    border-radius: 8px;
 }
 
-/* Styles pour les groupes de formulaire */
 .form-group {
-    margin-bottom: 15px; /* Espacement entre les groupes de formulaire */
+    margin-bottom: 15px;
 }
 
-/* Styles pour les étiquettes des champs */
 label {
     font-weight: bold;
     color:#88AACC;
 }
 
-/* Styles pour les champs de saisie et les sélecteurs */
 .form-control {
-    width: 100%; /* Largeur du champ de saisie */
-    padding: 8px; /* Espacement interne */
-    border: 1px solid #ccc; /* Bordure */
-    border-radius: 5px; /* Coins arrondis */
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Styles pour le bouton de soumission */
 .btn {
-    padding: 10px 20px; /* Espacement interne */
-    border: none; /* Pas de bordure */
-    border-radius: 5px; /* Coins arrondis */
-    cursor: pointer; /* Curseur pointer */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .btn-primary {
-    background-color: #88AACC; /* Couleur de fond pour le bouton primaire */
-    color: white; /* Couleur du texte */
+    background-color: #88AACC;
+    color: white;
 }
 
-/* Survol du bouton */
 .btn:hover {
     color: #595959;
-
 }
