@@ -78,16 +78,10 @@ nav {
     margin-left: 2vw;
     font-size: 1em;
     color: #88aacc;
-    cursor: pointer;
 }
 
 .search-btn:hover {
-    background: #88aacc;
-    color: white;
-    border: 1.5px solid #f2f5f7;
-}
-.fa-magnifying-glass:hover {
-    color: white;
+    cursor: pointer;
 }
 /*Button filter*/
 .filtre {
