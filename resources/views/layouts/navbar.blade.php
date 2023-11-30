@@ -12,8 +12,8 @@
     <ul class="nav-links">
         <li>
             <form  action='{{ route('rechercher') }}' method='get'>
-                <input class='search' type='text' name='rechercher' placeholder='Votre recherche' value=''>
-                <button class='search' type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input class='search' type='text' name='rechercher' placeholder='Rechercher' value=''>
+                <button class='search-btn' type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </li>
         <li>

@@ -6,14 +6,14 @@
     font-weight: 300;
 }
 body {
-    background-color: #bbbbbb;
+    background-color: white;
     overflow-x: hidden;
 }
 nav {
     font-size: 1em;
     height: 6rem;
     width: 100vw;
-    background-color: #595959;
+    background-color: #88aacc;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     z-index: 10;
@@ -42,10 +42,10 @@ nav {
 .nav-links li a {
     text-decoration: none;
     margin: 0 0.7vw;
-    color: #88aacc;
+    color: white;
 }
 .nav-links li a:hover {
-    color: #61dafb;
+    text-decoration: underline;
     transition: all ease-in-out .3s;
 }
 .nav-links li {
@@ -56,8 +56,8 @@ nav {
 }
 /*Button search*/
 .search {
-    background-color: transparent;
-    border: 1.5px solid #88aacc;
+    background-color: white;
+    border: 1.5px solid #ffffff;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     margin-left: 2vw;
@@ -67,30 +67,50 @@ nav {
 }
 
 .search:hover {
-    color: #61dafb;
-    background-color: #595959;
     border: 1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
 }
+.search-btn {
+    background-color: white;
+    border: 1.5px solid #ffffff;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1em;
+    color: #88aacc;
+    cursor: pointer;
+}
 
+.search-btn:hover {
+    background: #88aacc;
+    color: white;
+    border: 1.5px solid #f2f5f7;
+}
+.fa-magnifying-glass:hover {
+    color: white;
+}
 /*Button filter*/
 .filtre {
-    color: #88aacc;
-    background-color: #595959;
+    color: white;
+    background-color: transparent;
     border: none;
     font-size: 1em;
+    padding: .5em;
+    border-radius: 30px;
 }
 
 .filtre:hover {
-    color: #61dafb;
-    border-bottom: 1.5px solid #f2f5f7;
+    color: #88aacc;
+    background-color: white;
+    border-bottom: 1.5px solid #88aacc;
     transition: all ease-in-out 350ms;
 }
 
 /*Styling Buttons*/
 .login-button {
+    color: white;
     background-color: transparent;
-    border: 1.5px solid #88aacc;
+    border: 1.5px solid white;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     margin-left: 2vw;
@@ -98,15 +118,15 @@ nav {
     cursor: pointer;
 }
 .login-button:hover {
-    color: #131418;
-    background-color: #595959;
-    border: 1.5px solid #f2f5f7;
+    color: #88aacc;
+    background-color: white;
+    border: 1.5px solid #88aacc;
     transition: all ease-in-out 350ms;
 }
 .logout-button {
     background-color: transparent;
-    border: 1.5px solid #88aacc;
-    color: #88aacc;
+    border: 1.5px solid #ffffff;
+    color: #ffffff;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     margin-left: 2vw;
@@ -114,24 +134,24 @@ nav {
     cursor: pointer;
 }
 .logout-button:hover {
-    color: #61dafb;
-    background-color: #595959;
-    border: 1.5px solid #f2f5f7;
+    color: #88aacc;
+    background-color: white;
+    border: 1.5px solid #88aacc;
     transition: all ease-in-out 0.3s;
 }
 .join-button {
-    color: #131418;
-    background-color: #61dafb;
-    border: 1.5px solid #61dafb;
+    color: white;
+    background-color: #88aacc;
+    border: 1.5px solid white;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     font-size: 1rem;
     cursor: pointer;
 }
 .join-button:hover {
-    color: #f2f5f7;
-    background-color: transparent;
-    border: 1.5px solid #f2f5f7;
+    color: #88aacc;
+    background-color: white;
+    border: 1.5px solid #88aacc;
     transition: all ease-in-out 350ms;
 }
 
