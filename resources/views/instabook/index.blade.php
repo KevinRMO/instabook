@@ -4,13 +4,14 @@
 
 @section('content')
     <div class="parent">
-        @foreach ($instabook as $instabook)
+        @foreach ($instabooks as $instabook)
             <article>
                 <section class="card">
                     <img class="visual" src={{ $instabook->image_path }}>
                         <div class="text-content">
                             <h2>{{ $instabook->title }}</h2><br>
-                            <h3>{{ $instabook->author->firstname }} {{ $instabook->author->lastname }}</h3>
+                            <h3>{{ $instabook->author->firstname }} {{ $instabook->author->lastname }}</h3><br>
+                            <h3>{{$instabook->genre->genre}}</h3>
                             <a href="{{route('instabook.show', $instabook->id)}}">En savoir plus</a>
                         </div>
                     <br>

@@ -26,9 +26,7 @@
                     </form>
                 </div>
             </div>
-            <img class="visual" src={{ $instabook->image_path }}>
+            <img class="visual" src="/{{ $instabook->image_path }}">
         </section>  
     </article>
 @endsection
-
-

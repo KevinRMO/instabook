@@ -4,14 +4,6 @@
 
 @section ('content')
 
-@if ($errors->any())
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{$error}}</li>
-        @endforeach
-    </ul>
-@endif
-
 <div class="card">
     <form action="{{ route('instabook.store') }}" method='post' class="my-form" enctype="multipart/form-data">
         @csrf
@@ -62,8 +54,8 @@
 </div>
 
 <div class="form-group">
-    <label for="image_path">Image :
-    <input type="file" name="image_path" id="image_path" class="form-control-file" accept="image/jpeg" onchange="previewImage(event)">
+    <label for="image_path">Image :</label>
+    <input type="file" name="image_path" id="image_path" class="form-control-file" accept="image/jpeg/jpg/png/gifg" onchange="previewImage(event)">
     @if($errors->has('image_path'))
         <p>{{$errors->first('image_path')}}</p>
     @endif

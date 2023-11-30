@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [InstaBookController::class, 'index']);
 
-Route::get('/', [InstaBookController::class, 'search'])->name('rechercher');
+Route::get('/search', [InstaBookController::class, 'search'])->name('rechercher');
 
 Route::resource('instabook', InstaBookController::class);
 // Route::get('/instabook/edit/{id}', 'InstaBookController@edit')->name('instabook.edit');
