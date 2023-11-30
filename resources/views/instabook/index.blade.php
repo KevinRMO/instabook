@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="parent">
-        @foreach ($instabook as $instabook)
+        @foreach ($instabooks as $instabook)
             <article>
                 <section class="card">
                     <img class="visual" src={{ $instabook->image_path }}>

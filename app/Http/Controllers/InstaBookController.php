@@ -12,8 +12,8 @@ class InstaBookController extends Controller
 {
     public function index()
     {
-        $instabook = InstaBook::All();
-        return view('instabook.index', compact('instabook'));
+        $instabooks = InstaBook::All();
+        return view('instabook.index', compact('instabooks'));
     }
 
     public function create()
