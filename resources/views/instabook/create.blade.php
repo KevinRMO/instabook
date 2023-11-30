@@ -9,43 +9,48 @@
         @csrf
         <div class="form-group">
          <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-            <label for="title">Titre du livre:</label>
+            <label for="title">Titre du livre:
             <input type='text' name='title' id='title' placeholder='Nom du Livre' class="form-control inpcreate">
             @if($errors->has('title'))
                 <p>{{$errors->first('title')}}</p>
             @endif
+            </label>
         </div>
         <div class="form-group">
-            <label for="author">Auteur:</label>
+            <label for="author">Auteur:
             <select name='author' id='author' class="form-control inpcreate">
                 @foreach ($authors as $author)
-                    <option value='{{$author->id}}'>{{$author->lastname}}</option>
+                    <option placeholder="Choisir" value='{{$author->id}}'>{{$author->lastname}} </option>
                 @endforeach
             </select>
+            </label>
         </div>
         <div class="form-group">
-            <label for="genre">Genre:</label>
+            <label for="genre">Genre:
             <select name='genre' id='genre' class="form-control inpcreate">
                 @foreach ($genres as $genre)
                     <option value='{{$genre->id}}'>{{$genre->genre}}</option>
                 @endforeach
             </select>
+            </label>
         </div>
         
       <div class="form-group">
-    <label for="year">Année de publication :</label>
+    <label for="year">Année de publication :
     <input type="year" name="year" id="year" class="form-control inpcreate">
     @if($errors->has('year'))
         <p>{{$errors->first('year')}}</p>
     @endif
+    </label>
 </div>
 
 <div class="form-group">
-    <label for="content">Synopsis :</label>
+    <label for="content">Synopsis :
     <textarea name="content" id="content" class="form-control inpcreate"></textarea>
     @if($errors->has('content'))
         <p>{{$errors->first('content')}}</p>
     @endif
+    </label>
 </div>
 
 <div class="form-group">
@@ -54,6 +59,7 @@
     @if($errors->has('image_path'))
         <p>{{$errors->first('image_path')}}</p>
     @endif
+    </label>
 </div>
 
 <div class="form-group">

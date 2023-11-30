@@ -19,7 +19,7 @@ textarea {
 }
 
 .my-form {
-    background-color: #595959;
+    background-color: #88AACC;
     width: 50%;
     margin: auto;
     padding: 4vh;
@@ -33,7 +33,7 @@ textarea {
 
 label {
     font-weight: bold;
-    color:#88AACC;
+    color:#595959;
 }
 
 .form-control {
@@ -53,6 +53,9 @@ label {
 .btn-primary {
     background-color: #88AACC;
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
+
 }
 
 .btn:hover {
