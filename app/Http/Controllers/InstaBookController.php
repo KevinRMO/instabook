@@ -18,6 +18,7 @@ class InstaBookController extends Controller
 
     public function create()
     {
+        $user_id = auth()->id(); 
         $authors = Author::all();
         $genres = Genre::all();
         return view('instabook.create', compact("authors", "genres"));
@@ -26,40 +27,43 @@ class InstaBookController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'user_id'=> 'required',
+            'user_id' => 'required',
             'title' => 'required',
             'author' => 'required|exists:authors,id',
             'genre' => 'required|exists:genres,id',
-            'year' => 'required',
+            'year' => 'required|numeric',
             'content' => 'required',
-            'image_path' => 'required'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     
-        // Récupérer l'auteur et le genre par leur ID
         $authorId = $request->input('author');
         $genreId = $request->input('genre');
-
+    
         $image_path = null;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image_path = $image->storeAs('images', $imageName, 'public');
         }
-        // Enregistrer les données dans la table InstaBook avec les clés étrangères
-        InstaBook::create([
-            "user_id" => $request->user_id,
-            "title" => $request->title,
-            "author_id" => $authorId,
-            "genre_id" => $genreId,
-            "year" => $request->year,
-            "content" => $request->content,
-            "image_path" =>$image_path
+    
+        // Utiliser l'authentification pour obtenir l'utilisateur connecté et créer un livre associé à cet utilisateur
+        $user = auth()->user();
+    
+        // Créer un livre associé à l'utilisateur connecté
+        $newInstabook = $user->instabooks()->create([
+            'user_id' => $user->id, 
+            'title' => $request->title,
+            'author_id' => $authorId,
+            'genre_id' => $genreId,
+            'year' => $request->year,
+            'content' => $request->content,
+            'image_path' => $image_path,
         ]);
     
-        // Rediriger vers une page appropriée après l'enregistrement, par exemple, la page de détails du livre
-        return redirect()->route('instabook.show', ['id' => $id]);
-
+        // Redirection vers la page de détails du livre nouvellement créé
+        return redirect()->route('instabook.show', ['id' => $newInstabook->id]);
     }
+    
    
 
 
