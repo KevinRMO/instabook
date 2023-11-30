@@ -10,11 +10,36 @@ html {
 body {
     margin: 0;
     font-size: 21px;
-    background: #b4b3b3;
+    background: white;
     color: #000;
     font-family: "Poppins", sans-serif;
 }
+.accueil {
+    color: #88aacc;
+}
+.accueil:visited {
+    color: #88aacc;
+}
 
+/* I //////////////////////////// Page de confirmation de connexion //////////////////////////// I */
+.connected {
+    color: #88aacc;
+    font-size: 1.5em;
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.border-blue {
+    border: 3px solid #88aacc;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5em;
+    gap: 5vh;
+    background: #595959;
+}
 /* I //////////////////////////// Show card //////////////////////////// I */
 section.show {
     background: #595959;
@@ -93,7 +118,6 @@ section.show .visual img {
 /* I //////////////////////////// Index card ////////////////////////// I */
 
 section.card {
-    background: #595959;
     margin: 84px 0;
     align-items: center;
     width: 60%;
@@ -101,30 +125,29 @@ section.card {
     flex-direction: column;
     align-self: flex-start;
     position: relative;
-    border: 3px solid #88aacc;
 }
 section.card .text-content {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: calc(60vw - 192px);
+    text-align: center;
 }
 section.card .text-content h2 {
     margin: 0;
-    color: #88aacc;
+    color: #747171;
     transition: 0.5s;
 }
 
 h3 {
-    color: #88aacc;
+    color: #747171;
 }
 section.card .text-content p {
     margin: 25px 0 24px;
-    color: #88aacc;
+    color: #747171;
 }
 section.card .text-content a {
-    border: 3px solid #88aacc;
-    color: #88aacc;
+    border: 3px solid #747171;
+    color: #747171;
     text-decoration: none;
     padding: 16px 32px;
     border-radius: 12px;
@@ -132,13 +155,13 @@ section.card .text-content a {
     margin-top: 1em;
 }
 section.card .text-content a:hover {
-    border: 3px solid white;
-    color: #61dafb;
+    cursor: pointer;
+    box-shadow: -10px 10px 10px grey;
 }
 section.card .visual {
     height: 30em;
     margin-bottom: 2em;
-    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: -20px 20px 10px grey;
 }
 section.card .visual img {
     height: 110%;
@@ -194,4 +217,12 @@ article {
         width: 100%;
         height: auto;
     }
+}
+@media all and (min-width: 721px) {
+    .parent {
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+    }
+    
 }
