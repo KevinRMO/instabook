@@ -15,18 +15,7 @@
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
-<<<<<<< HEAD
-
-
-    <body class="font-sans antialiased">
-
-        {{-- @include('layouts.navbar') --}}
-
-
-
-=======
     <body class="font-sans antialiased center-card">
->>>>>>> fbd0e06747e6a9ac05416234dc16fbdc0eeb09a1
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             <!-- Page Heading -->
             @if (isset($header))
