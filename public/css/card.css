@@ -14,7 +14,30 @@ body {
     color: #000;
     font-family: "Poppins", sans-serif;
 }
-
+.accueil {
+    color: #88aacc;
+}
+.accueil:visited {
+    color: #88aacc;
+}
+.connected {
+    color: #88aacc;
+    font-size: 1.5em;
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.border-blue {
+    border: 3px solid #88aacc;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5em;
+    gap: 5vh;
+    background: #595959;
+}
 /* I //////////////////////////// Show card //////////////////////////// I */
 section.show {
     background: #595959;
@@ -107,7 +130,7 @@ section.card .text-content {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: calc(60vw - 192px);
+    text-align: center;
 }
 section.card .text-content h2 {
     margin: 0;

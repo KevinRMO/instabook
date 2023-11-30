@@ -1,25 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.nonavbar')
 
 @section('title', 'Accueil Instabook')
 
 @section('content')
-    @foreach ($instabook as $instabook)
-        <article>
-            <section class="card">
-                <div class="text-content">
-                    <h2>{{ $instabook->title }}</h2><br>
-                    <h3>{{ $instabook->author->firstname }} {{ $instabook->author->lastname }}</h3>
-                    <p>{{ $instabook->year }}, {{ $instabook->genre->genre }}</p>
-                    <p>{{ $instabook->content }}</p>
-                    <a href="{{route('instabook.show', $instabook->id)}}">En savoir plus</a>
-                </div>
-                <div class="visual">
-                    <img src="https://m.media-amazon.com/images/I/61HdYKaCHAL._SL1063_.jpg" alt />
-                </div>
-                <br>
-            </section>
-        </article>
-        <br>
-    @endforeach
-
+    <div class="connected">
+        <div class="border-blue">
+            <h2>Connexion réussie</h2>
+            <a class="accueil" href="/">Accueil</a>
+            <p>Vous pouvez désormais poster des livres et noter ceux des autres utilisateurs</p>
+        </div>
+    </div>
 @endsection
