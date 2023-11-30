@@ -1,3 +1,5 @@
+/*-----------LOGIN ET REGISTER------------*/
+
 body {
     margin: 0;
     padding: 0;
@@ -30,7 +32,10 @@ body div.login div form div.flex.items-center.justify-end.mt-4 a {
 
 /* Couleur dans l'input*/
 #email,
-#password {
+#password,
+#firstname,
+#lastname,
+#password_confirmation {
     background-color: #ffffff;
     border-color: #88aacc;
     color: #88aacc;

@@ -32,25 +32,26 @@ class InstaBookController extends Controller
             'genre' => 'required|exists:genres,id',
             'year' => 'required|numeric',
             'content' => 'required',
+            'image_path' => 'required'
             
         ]);
 
         $authorId = $request->input('author');
         $genreId = $request->input('genre');
 
-        $image_path = null;
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
+        // $image_path = null;
+             
+            $image = $request->file('image_path');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image_path = $image->storeAs('images', $imageName, 'public');
-        }
+    
 
         // Utiliser l'authentification pour obtenir l'utilisateur connecté et créer un livre associé à cet utilisateur
         $user = auth()->user();
 
         // Créer un livre associé à l'utilisateur connecté
-        $image_path= null;
-        $Instabook = $user->instabooks()->create([
+       
+        $instabook = $user->instabooks()->create([
             'user_id' => $user->id, 
             'title' => $request->title,
             'author_id' => $authorId,
@@ -61,7 +62,7 @@ class InstaBookController extends Controller
         ]);
 
         // Redirection vers la page de détails du livre nouvellement créé
-        return redirect()->route('instabook.show', ['instabook' => $Instabook->id]);
+        return redirect()->route('instabook.show', ['instabook' => $instabook->id]);
 
     }
 
@@ -80,7 +81,7 @@ class InstaBookController extends Controller
         // $instabook = Instabook::findOrFail($id);
         $authors = Author::All();
         $genres = Genre::All();
-        return view('instabook.create',compact("authors", "genres"));
+        return view('instabook.edit',compact("authors", "genres", "instabook"));
 
     }
  
@@ -93,7 +94,7 @@ class InstaBookController extends Controller
             'genre_id' => 'required',
             'year' => 'required',
             'content' => 'required',
-            // 'image_path' => 'required'
+            'image_path' => 'required'
         
         ]);
         $instabook->user_id = $request->user_id;

@@ -16,7 +16,7 @@
         <select name='author_id'>
             @foreach ($authors as $author)
                 <option value='{{$author->id}}' {{ $author->id == old('author_id', $instabook->author_id) ? 'selected' : '' }}>
-                    {{$author->name}} {{-- Assurez-vous d'adapter le nom de l'attribut d'auteur --}}
+                    {{$author->name}} 
                 </option>
             @endforeach
         </select><br>
@@ -24,7 +24,7 @@
         <select name='genre_id'>
             @foreach ($genres as $genre)
                 <option value='{{$genre->id}}' {{ $genre->id == old('genre_id', $instabook->genre_id) ? 'selected' : '' }}>
-                    {{$genre->name}} {{-- Assurez-vous d'adapter le nom de l'attribut de genre --}}
+                    {{$genre->name}} 
                 </option>
             @endforeach
         </select><br>
@@ -39,9 +39,7 @@
             <p>{{$errors->first('content')}}</p>
         @endif
 
-        {{-- Gestion de l'image --}}
-        {{-- Image : <input type='file' name='image'> --}}
-        {{-- Ajoutez la gestion de l'image si nécessaire --}}
+     
 
         <input type='Submit' value='Modifier'>
     </form>

@@ -13,7 +13,7 @@
 @endif
 
 <div class="card">
-    <form action="{{ route('instabook.store') }}" method='post' class="my-form">
+    <form action="{{ route('instabook.store') }}" method='post' class="my-form" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
          <input type="hidden" name="user_id" value="{{ auth()->id() }}">
