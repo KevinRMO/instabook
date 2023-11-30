@@ -18,7 +18,6 @@ class InstaBookController extends Controller
 
     public function create()
     {
-        $user_id = auth()->id(); 
         $authors = Author::all();
         $genres = Genre::all();
         return view('instabook.create', compact("authors", "genres"));
@@ -33,23 +32,24 @@ class InstaBookController extends Controller
             'genre' => 'required|exists:genres,id',
             'year' => 'required|numeric',
             'content' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-    
+
         $authorId = $request->input('author');
         $genreId = $request->input('genre');
-    
+
         $image_path = null;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image_path = $image->storeAs('images', $imageName, 'public');
         }
-    
+
         // Utiliser l'authentification pour obtenir l'utilisateur connecté et créer un livre associé à cet utilisateur
         $user = auth()->user();
-    
+
         // Créer un livre associé à l'utilisateur connecté
+        $image_path= null;
         $newInstabook = $user->instabooks()->create([
             'user_id' => $user->id, 
             'title' => $request->title,
@@ -57,15 +57,13 @@ class InstaBookController extends Controller
             'genre_id' => $genreId,
             'year' => $request->year,
             'content' => $request->content,
-            'image_path' => $image_path,
+            // 'image_path' => $image_path,
         ]);
-    
-        // Redirection vers la page de détails du livre nouvellement créé
-        return redirect()->route('instabook.show', ['id' => $newInstabook->id]);
-    }
-    
-   
 
+        // Redirection vers la page de détails du livre nouvellement créé
+        return redirect()->route('instabook.show', ['instabook' => $newInstabook->id]);
+
+    }
 
     public function show(InstaBook $instabook)
     {
@@ -77,8 +75,6 @@ class InstaBookController extends Controller
         ]);
     }
 
-  
-  
     public function edit(InstaBook $instabook)
     {
         $authors = Author::All();
@@ -96,7 +92,7 @@ class InstaBookController extends Controller
             'genre_id' => 'required',
             'year' => 'required',
             'content' => 'required',
-            'image_path' => 'required'
+            // 'image_path' => 'required'
         
         ]);
         $instabook->user_id = $request->user_id;
@@ -106,7 +102,9 @@ class InstaBookController extends Controller
         $instabook->year = $request->year;
         $instabook->content = $request->content;
         $instabook->image_path = $request->image_path;
-
+        if ($request->has('image_path')) {
+            $instabook->image_path = $request->image_path;
+        }
         $instabook->save();
 
         return redirect(route('instabook.show', compact('instabook')));
