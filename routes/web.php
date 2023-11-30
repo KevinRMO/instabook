@@ -11,6 +11,8 @@ Route::get('/', [InstaBookController::class, 'index']);
 Route::get('/', [InstaBookController::class, 'search'])->name('rechercher');
 
 Route::resource('instabook', InstaBookController::class);
+// Route::get('/instabook/edit/{id}', 'InstaBookController@edit')->name('instabook.edit');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

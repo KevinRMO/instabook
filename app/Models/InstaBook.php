@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class InstaBook extends Model
 {
-    protected $fillable = ['title', 'author_id', 'genre_id', 'year', 'content','user_id'];
+    protected $fillable = ['title', 'author_id', 'genre_id', 'year', 'content','user_id', "image_path"];
 
     public function getAuthor()
     {
