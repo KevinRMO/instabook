@@ -21,7 +21,7 @@
             <select name='author_id' class="form-control">
                 @foreach ($authors as $author)
                     <option value='{{$author->id}}' {{ $author->id == old('author_id', $instabook->author_id) ? 'selected' : '' }}>
-                        {{$author->name}} 
+                        {{$author->lastname}} 
                     </option>
                 @endforeach
             </select>
@@ -32,7 +32,7 @@
             <select name='genre_id' class="form-control">
                 @foreach ($genres as $genre)
                     <option value='{{$genre->id}}' {{ $genre->id == old('genre_id', $instabook->genre_id) ? 'selected' : '' }}>
-                        {{$genre->name}} 
+                        {{$genre->genre}} 
                     </option>
                 @endforeach
             </select>

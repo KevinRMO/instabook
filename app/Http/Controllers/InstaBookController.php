@@ -15,7 +15,6 @@ class InstaBookController extends Controller
         $instabooks = InstaBook::select('insta_books.*', 'genres.genre')
         ->join('genres', 'genre_id', '=', 'genres.id')
         ->get();
-        // dd($instabooks);
         return view('instabook.index', compact('instabooks'));
     }
 
@@ -42,11 +41,9 @@ class InstaBookController extends Controller
         $authorId = $request->input('author');
         $genreId = $request->input('genre');
 
-        // $image_path = null;
-             
-            $image = $request->file('image_path');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image_path = $image->storeAs( $imageName,'public/images' );
+        $image = $request->file('image_path');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image_path = $image->storeAs( $imageName,'public/images' );
     
 
         // Utiliser l'authentification pour obtenir l'utilisateur connecté et créer un livre associé à cet utilisateur

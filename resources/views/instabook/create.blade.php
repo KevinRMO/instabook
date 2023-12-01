@@ -20,7 +20,7 @@
             <label for="author">Auteur:
             <select name='author' id='author' class="form-control inpcreate">
                 @foreach ($authors as $author)
-                    <option placeholder="Choisir" value='{{$author->id}}'>{{$author->lastname}} </option>
+                    <option value='{{$author->id}}'>{{$author->lastname}} </option>
                 @endforeach
             </select>
             </label>
