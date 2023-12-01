@@ -174,7 +174,7 @@ section.show .visual img {
 section.card {
     margin: 84px 0;
     align-items: center;
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
@@ -221,7 +221,7 @@ section.card .text-content a:hover {
     color: white;
 }
 section.card .visual {
-    height: 30em;
+    height: 25em;
     margin-bottom: 2em;
     box-shadow: -20px 20px 10px grey;
 }
@@ -233,7 +233,7 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(60vw + 248px);
+    /* width: calc(60vw + 248px); */
     max-width: calc(920px + 248px);
     min-width: calc(640px + 248px);
 }
