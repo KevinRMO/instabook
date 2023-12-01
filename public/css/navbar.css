@@ -52,12 +52,12 @@ nav {
     transition: all ease-in-out 350ms;
     box-shadow: -3px 3px 15px grey;
     background: linear-gradient(
-    to top right,
-    #595959 0%,
-    #a0a0a0 15%,
-    #88aacc 85%,
-    white 100%
-  );
+        to top right,
+        #595959 0%,
+        #a0a0a0 15%,
+        #88aacc 85%,
+        white 100%
+    );
 }
 .nav-links li {
     position: relative;
@@ -74,7 +74,6 @@ nav {
     margin-left: 2vw;
     font-size: 1em;
     color: #88aacc;
-    cursor: pointer;
 }
 
 .search:focus {
@@ -115,12 +114,12 @@ nav {
     transition: all ease-in-out 350ms;
     box-shadow: -3px 3px 15px grey;
     background: linear-gradient(
-    to top right,
-    #595959 0%,
-    #a0a0a0 15%,
-    #88aacc 85%,
-    white 100%
-  );
+        to top right,
+        #595959 0%,
+        #a0a0a0 15%,
+        #88aacc 85%,
+        white 100%
+    );
 }
 .logout-button {
     background-color: transparent;
@@ -137,12 +136,12 @@ nav {
     transition: all ease-in-out 350ms;
     box-shadow: -3px 3px 15px grey;
     background: linear-gradient(
-    to top right,
-    #595959 0%,
-    #a0a0a0 15%,
-    #88aacc 85%,
-    white 100%
-  );
+        to top right,
+        #595959 0%,
+        #a0a0a0 15%,
+        #88aacc 85%,
+        white 100%
+    );
 }
 .join-button {
     color: white;

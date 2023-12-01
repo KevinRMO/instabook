@@ -17,9 +17,9 @@
                 @else
                     <form action="{{ route('instabook.storeRate', $instabook->id) }}" method="post">
                         @csrf
-                        <label for="rate" style="color: #88bbcc">Donner une note:</label>
-                        <input type="number" id="rate" name="rate" min="0" max="5" required>
-                        <button type="submit">Soumettre</button>
+                        <label class="noteText" for="rate">Donner une note:</label>
+                        <input class="noteInput" type="number" id="rate" name="rate" min="0" max="5" required>
+                        <button class="noteButton" type="submit">Soumettre</button>
                     </form>
                 @endif
                 <div class="form">
