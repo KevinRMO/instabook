@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('content', 2500);
             $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
-            $table->string('image_path');
+            $table->string('image_path')->nullable();
         });
     }
 

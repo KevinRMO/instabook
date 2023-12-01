@@ -29,10 +29,17 @@ class InstaBook extends Model
         return $this->belongsTo(Genre::class, 'genre_id');
     }
 
-    // public function getRate()
-    // {
-    //     return Rate::select()->where('id','=',$this->rate_id)->get();
-    // }
+        public function averageRating()
+    {
+        return $this->ratings()->avg('rate');
+    }
+
+    public function ratings()
+    {
+        return $this->hasMany(Rate::class, 'insta_book_id');
+    }
+
+  
     public function user()
     {
         return $this->belongsTo(User::class);

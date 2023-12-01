@@ -54,12 +54,12 @@ body {
     transition: all ease-in-out 350ms;
     box-shadow: -3px 3px 15px grey;
     background: linear-gradient(
-    to top right,
-    #595959 0%,
-    #a0a0a0 15%,
-    #88aacc 85%,
-    white 100%
-  );
+        to top right,
+        #595959 0%,
+        #a0a0a0 15%,
+        #88aacc 85%,
+        white 100%
+    );
 }
 /* I //////////////////////////// Show card //////////////////////////// I */
 section.show {
@@ -88,6 +88,7 @@ section.show .text-content p {
     margin: 25px 0 24px;
     color: #595959;
 }
+
 section.show .text-content a {
     border: 3px solid #88aacc;
     color: #595959;
@@ -117,7 +118,8 @@ section.show .visual img {
     height: 110%;
 }
 .editButton,
-.destroyButton {
+.destroyButton,
+.noteButton {
     border: 3px solid #88aacc;
     color: #88aacc;
     background: white;
@@ -129,17 +131,34 @@ section.show .visual img {
     font-size: 21px;
 }
 .editButton:hover,
-.destroyButton:hover {
+.destroyButton:hover,
+.noteButton:hover {
     cursor: pointer;
     box-shadow: -3px 3px 15px grey;
     background: linear-gradient(
-    to top right,
-    #595959 0%,
-    #a0a0a0 15%,
-    #88aacc 85%,
-    white 100%
-  );
-  color: white;
+        to top right,
+        #595959 0%,
+        #a0a0a0 15%,
+        #88aacc 85%,
+        white 100%
+    );
+    color: white;
+}
+.noteInput {
+    border: 3px solid #88aacc;
+    color: #88aacc;
+    background: white;
+    align-self: flex-start;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    transition: 400ms all;
+    font-size: 21px;
+}
+.noteText {
+    margin: 25px 0 24px;
+    color: #595959;
+    font-weight: normal;
 }
 .fa-solid {
     color: #88aacc;
@@ -193,13 +212,13 @@ section.card .text-content a:hover {
     cursor: pointer;
     box-shadow: -3px 3px 15px grey;
     background: linear-gradient(
-    to top right,
-    #595959 0%,
-    #a0a0a0 15%,
-    #88aacc 85%,
-    white 100%
-  );
-  color: white;
+        to top right,
+        #595959 0%,
+        #a0a0a0 15%,
+        #88aacc 85%,
+        white 100%
+    );
+    color: white;
 }
 section.card .visual {
     height: 30em;
@@ -267,5 +286,4 @@ article {
         display: flex;
         flex-direction: row;
     }
-    
 }

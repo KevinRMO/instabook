@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rates', function (Blueprint $table) {
-            $table->id();
-            $table->integer('rate');
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
+        Schema::table('rates', function (Blueprint $table) {
+            $table->unsignedBigInteger('insta_book_id')->nullable();
+            $table->foreign('insta_book_id')->references('id')->on('insta_books')->onDelete('cascade');
         });
     }
 
@@ -25,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rates');
+        Schema::table('rates', function (Blueprint $table) {
+            //
+        });
     }
 };

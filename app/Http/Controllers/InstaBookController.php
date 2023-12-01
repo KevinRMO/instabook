@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use App\Models\Genre;
-
+use App\Models\Rate;
 use App\Models\InstaBook;
 use Illuminate\Http\Request;
 
@@ -68,10 +68,31 @@ class InstaBookController extends Controller
 
     }
 
+        public function storeRate(Request $request, InstaBook $instabook)
+    {
+        $request->validate([
+            'rate' => 'required|numeric|min:0|max:5',
+        ]);
+        
+        $rate = Rate::create([
+            'rate'=> $request->rate,
+            'insta_book_id'=> $instabook->id,
+            'user_id' => auth()->id(), // Utilisation de l'ID de l'utilisateur authentifié
+        ]);
+
+        return redirect()->route('instabook.show', ['instabook' => $instabook->id])
+            ->with('success', 'Note enregistrée avec succès !');
+    }
+
     public function show(InstaBook $instabook)
     {
+        $instaBooks = InstaBook::all();
+        $user = auth()->user();
+        $rated = $instabook->ratings()->where('user_id', $user->id)->first(); // Vérifie si l'utilisateur a déjà noté ce livre
+    
         return view('instabook.show')->with([
             'instabook' => $instabook,
+            'rated' => $rated,
         ]);
     }
 

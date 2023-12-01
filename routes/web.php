@@ -16,6 +16,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::post('/instabook/{instabook}/storeRate', [InstaBookController::class, 'storeRate'])->name('instabook.storeRate');
     Route::resource('instabook', InstaBookController::class);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
