@@ -15,6 +15,7 @@ class InstaBookController extends Controller
         $instabooks = InstaBook::select('insta_books.*', 'genres.genre')
         ->join('genres', 'genre_id', '=', 'genres.id')
         ->get();
+        // dd($instabooks);
         return view('instabook.index', compact('instabooks'));
     }
 
@@ -34,19 +35,18 @@ class InstaBookController extends Controller
             'genre' => 'required|exists:genres,id',
             'year' => 'required|numeric',
             'content' => 'required',
-            'image_path' => 'required'
+            'image_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
             
         ]);
 
         $authorId = $request->input('author');
         $genreId = $request->input('genre');
 
-        $image = $request->file('image_path');
-        $originalName = $image->getClientOriginalName();
-        $extension =$image->getClientOriginalExtension();
-        $imageName = time() . '_' . pathinfo($originalName, PATHINFO_FILENAME) . '.' . $extension;
-        $image_path = $image->storeAs( 'images', $imageName,'public' );
-        $request->image_path->move(public_path('images'), $imageName);
+        // $image_path = null;
+             
+            $image = $request->file('image_path');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image_path = $image->storeAs( 'images',$imageName);
 
         // Utiliser l'authentification pour obtenir l'utilisateur connecté et créer un livre associé à cet utilisateur
         $user = auth()->user();
@@ -87,36 +87,29 @@ class InstaBookController extends Controller
     public function update(Request $request, InstaBook $instabook)
     {
         $request->validate([
+            'user_id'=> 'required',
             'title' => 'required',
             'author_id' => 'required',
             'genre_id' => 'required',
             'year' => 'required',
             'content' => 'required',
+            'image_path' => 'required'
+        
         ]);
+        $instabook->user_id = $request->user_id;
+        $instabook->title = ucwords(strtolower($request->title));
+        $instabook->author_id = $request->author_id;
+        $instabook->genre_id = $request->genre_id;
+        $instabook->year = $request->year;
+        $instabook->content = $request->content;
+        // $instabook->image_path = $request->image_path;
+        // if ($request->has('image_path')) {
+        //     $instabook->image_path = $request->image_path;
+        // }
+        $instabook->save();
 
-        if ($request->hasFile('image_path')) {
-            $image = $request->file('image_path');
-            $originalName = $image->getClientOriginalName();
-            $extension =$image->getClientOriginalExtension();
-            $imageName = time() . '_' . pathinfo($originalName, PATHINFO_FILENAME) . '.' . $extension;
-            $image_path = $image->storeAs('images', $imageName, 'public');
-            $request->image_path->move(public_path('images'), $imageName);
-        } else {
-            $image_path = $instabook->image_path;
-        }
-    
-        $instabook->update([
-            'title' => ucwords(strtolower($request->title)),
-            'author_id' => $request->author_id,
-            'genre_id' => $request->genre_id,
-            'year' => $request->year,
-            'content' => $request->content,
-            'image_path' => $image_path,
-        ]);
-    
         return redirect(route('instabook.show', compact('instabook')));
     }
-
 
 
     public function search(Request $request)
@@ -149,22 +142,4 @@ class InstaBookController extends Controller
     }
 
     
-    // public function destroy(string $id){
-
-    //         $title = ucfirst(strtolower($id));
-    //     if (array_key_exists($title, $this ->instabook)) {
-
-    //     unset ($this->instabook[$title]);
-
-    //     return view('instabook.index')-> with([
-    //         'instabook' => $this->instabook,
-    //         'message'=> "Le livre $title a été supprimé"
-    //     ]);
-    //     }
-    //     return view('instabook.index')-> with([
-    //         'instabook' => $this->instabook,
-    //         'message'=> "Le livre $title n'existe pas"
-    //     ]);
-
-    // }
 }

@@ -63,10 +63,12 @@ body {
 }
 /* I //////////////////////////// Show card //////////////////////////// I */
 section.show {
+    left: 8rem;
     border-radius: 15px;
     padding: 48px 48px 48px 48px;
     margin: 8rem 0px 0px 10em;
-    min-width: 640px;
+    width: 100vw;
+    /* min-width: 640px; */
     color: white;
     display: flex;
     flex-direction: column;
@@ -98,13 +100,16 @@ section.show .text-content a {
 section.show .text-content a:hover {
     border: 3px solid white;
     color: #61dafb;
+    left: -20em;
+
+    
 }
 section.show .visual {
-    width: 25em;
-    height: 35em;
+    width: 20em;
+    height: 30em;
     position: absolute;
     top: 0em;
-    left: -33em;
+    left: -22em;
     overflow: hidden;
     box-shadow: -20px 20px 10px grey;
 }
