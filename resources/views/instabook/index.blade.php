@@ -19,6 +19,6 @@
             </article>
             <br>
         @endforeach
-        {{$instabooks->links()}}
+        <div class="pagination">{{$instabooks->links()}}</div>
     </div>
 @endsection
