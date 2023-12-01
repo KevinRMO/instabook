@@ -169,23 +169,4 @@ class InstaBookController extends Controller
         return redirect()->route('instabook.index');
     }
 
-    
-    // public function destroy(string $id){
-
-    //         $title = ucfirst(strtolower($id));
-    //     if (array_key_exists($title, $this ->instabook)) {
-
-    //     unset ($this->instabook[$title]);
-
-    //     return view('instabook.index')-> with([
-    //         'instabook' => $this->instabook,
-    //         'message'=> "Le livre $title a été supprimé"
-    //     ]);
-    //     }
-    //     return view('instabook.index')-> with([
-    //         'instabook' => $this->instabook,
-    //         'message'=> "Le livre $title n'existe pas"
-    //     ]);
-
-    // }
 }
