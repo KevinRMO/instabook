@@ -235,7 +235,7 @@ article {
     align-items: center;
     /* width: calc(60vw + 248px); */
     max-width: calc(920px + 248px);
-    min-width: calc(640px + 248px);
+    min-width: calc(640px + 50px);
 }
 
 /* I //////////////////////////// Responsive ////////////////////////// I */
