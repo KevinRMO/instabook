@@ -169,6 +169,9 @@ class InstaBookController extends Controller
         return redirect()->route('instabook.index');
     }
 
+<<<<<<< HEAD
     
   
+=======
+>>>>>>> b2dc6402a1e46e8f3148c4e2d271821cb5a97fa3
 }
