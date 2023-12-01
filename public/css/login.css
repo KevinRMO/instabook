@@ -1,14 +1,14 @@
 /*-----------LOGIN ET REGISTER------------*/
 
 body {
-    margin: 0;
+    margin-top: 5em!important;
     padding: 0;
     width: 100vw;
     height: 100vh;
     background-color: #88aacc;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .logo,
@@ -23,13 +23,9 @@ body div.login div {
 }
 
 /* Couleur des textes*/
-body div.login div form div:nth-child(2) label,
-body div.login div form div:nth-child(3) label,
-body div.login div form div.block.mt-4 label span,
-body div.login div form div.flex.items-center.justify-end.mt-4 a {
-    color: #88aacc;
+label {
+    color: #88aacc!important;
 }
-
 /* Couleur dans l'input*/
 #email,
 #password,
@@ -54,7 +50,15 @@ body div.login div form div.flex.items-center.justify-end.mt-4 button {
 }
 
 body div.login div form div.flex.items-center.justify-end.mt-4 button:hover {
-    border-color: #ffffff;
-    color: #ffffff;
-    background-color: #88aacc;
+    color: white;
+    border: 2px solid #88aacc;
+    transition: all ease-in-out 350ms;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
 }

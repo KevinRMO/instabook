@@ -16,12 +16,7 @@
                 <button class='search-btn' type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </li>
-        <li>
-            <select class="filtre">
-                <option class="filtre">Filtre</option>
-                <option class="filtre" href="#">Policier</option>
-            </select>
-        </li>
+        
         <li><a href="/">Accueil</a></li>
         <li><a href="/instabook/create">Créer un livre</a></li>
 

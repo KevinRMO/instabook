@@ -48,8 +48,8 @@ nav {
     color: white;
 }
 .nav-links li a:hover {
-    border-radius: 30px;
-    padding: 10px;
+    border: 2px solid #88aacc;
+    transition: all ease-in-out 350ms;
     box-shadow: -3px 3px 15px grey;
     background: linear-gradient(
     to top right,
@@ -58,7 +58,6 @@ nav {
     #88aacc 85%,
     white 100%
   );
-  color: white;
 }
 .nav-links li {
     position: relative;
@@ -78,6 +77,10 @@ nav {
     cursor: pointer;
 }
 
+.search:focus {
+    outline: none;
+}
+
 .search:hover {
     border: 1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
@@ -95,27 +98,12 @@ nav {
 .search-btn:hover {
     cursor: pointer;
 }
-/*Button filter*/
-.filtre {
-    color: white;
-    background-color: #88aacc;
-    border: none;
-    font-size: 1em;
-    padding: .5em;
-    border-radius: 30px;
-}
-
-.filtre:hover {
-    border-bottom: 1.5px solid #88aacc;
-    transition: all ease-in-out 350ms;
-    cursor: pointer;
-}
 
 /*Style des bouttons*/
 .login-button {
     color: white;
     background-color: transparent;
-    border: 1.5px solid white;
+    border: 2px solid white;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     margin-left: 2vw;
@@ -123,7 +111,8 @@ nav {
     cursor: pointer;
 }
 .login-button:hover {
-    color: #88aacc;
+    border: 2px solid #88aacc;
+    transition: all ease-in-out 350ms;
     box-shadow: -3px 3px 15px grey;
     background: linear-gradient(
     to top right,
@@ -132,9 +121,6 @@ nav {
     #88aacc 85%,
     white 100%
   );
-  color: white;
-    border: 1.5px solid #88aacc;
-    transition: all ease-in-out 350ms;
 }
 .logout-button {
     background-color: transparent;
@@ -147,8 +133,8 @@ nav {
     cursor: pointer;
 }
 .logout-button:hover {
-    color: white;
-    transition: all ease-in-out 0.5s;
+    border: 2px solid #88aacc;
+    transition: all ease-in-out 350ms;
     box-shadow: -3px 3px 15px grey;
     background: linear-gradient(
     to top right,

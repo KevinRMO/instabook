@@ -85,23 +85,26 @@ class InstaBookController extends Controller
     }
  
     public function update(Request $request, InstaBook $instabook)
-{
+    {
         $request->validate([
             'title' => 'required',
             'author_id' => 'required',
             'genre_id' => 'required',
             'year' => 'required',
             'content' => 'required',
-            'image_path' => 'required'
         ]);
 
-        $image = $request->file('image_path');
-        $originalName = $image->getClientOriginalName();
-        $extension =$image->getClientOriginalExtension();
-        $imageName = time() . '_' . pathinfo($originalName, PATHINFO_FILENAME) . '.' . $extension;
-        $image_path = $image->storeAs( 'images', $imageName,'public' );
-        $request->image_path->move(public_path('images'), $imageName);
-
+        if ($request->hasFile('image_path')) {
+            $image = $request->file('image_path');
+            $originalName = $image->getClientOriginalName();
+            $extension =$image->getClientOriginalExtension();
+            $imageName = time() . '_' . pathinfo($originalName, PATHINFO_FILENAME) . '.' . $extension;
+            $image_path = $image->storeAs('images', $imageName, 'public');
+            $request->image_path->move(public_path('images'), $imageName);
+        } else {
+            $image_path = $instabook->image_path;
+        }
+    
         $instabook->update([
             'title' => ucwords(strtolower($request->title)),
             'author_id' => $request->author_id,
@@ -110,9 +113,9 @@ class InstaBookController extends Controller
             'content' => $request->content,
             'image_path' => $image_path,
         ]);
-
-    return redirect(route('instabook.show', compact('instabook')));
-}
+    
+        return redirect(route('instabook.show', compact('instabook')));
+    }
 
 
 
