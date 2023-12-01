@@ -11,7 +11,17 @@
                 <h3>{{ $instabook->author->firstname }} {{ $instabook->author->lastname }}</h3>
                 <p>{{$instabook->year}} , {{$instabook->genre->genre}}</p>
                 <p>{{$instabook->content}}</p>
-                {{-- <p>{{$instabook->rate}}</p> --}}
+                <p>Note moyenne : {{ number_format($instabook->averageRating(), 1)}}/5</p>
+                @if($rated) <!-- Vérifie si l'utilisateur a déjà noté ce livre -->
+                    <p>Vous avez déjà noté ce livre avec une note de {{ $rated->rate }}/5</p>
+                @else
+                    <form action="{{ route('instabook.storeRate', $instabook->id) }}" method="post">
+                        @csrf
+                        <label for="rate" style="color: #88bbcc">Donner une note:</label>
+                        <input type="number" id="rate" name="rate" min="0" max="5" required>
+                        <button type="submit">Soumettre</button>
+                    </form>
+                @endif
                 <div class="form">
                     @if(auth()->check() && $instabook->user_id === auth()->user()->id)  
                         <form class="" action="{{route('instabook.edit', $instabook['id'])}}" method="get">
