@@ -85,11 +85,20 @@ class InstaBookController extends Controller
     }
 
     public function show(InstaBook $instabook)
-    {
-        $instaBooks = InstaBook::all();
-        $user = auth()->user();
-        $rated = $instabook->ratings()->where('user_id', $user->id)->first(); // Vérifie si l'utilisateur a déjà noté ce livre
-    
+    {   
+     // Récupère tous les livres InstaBook (peut-être pas nécessaire ici)
+     $instaBooks = InstaBook::all();
+     // Vérifie si l'utilisateur est connecté
+     if(auth()->user()){ 
+         // Récupère l'utilisateur connecté
+         $user = auth()->user();
+         // Vérifie si l'utilisateur a déjà noté ce livre
+         $rated = $instabook->ratings()->where('user_id', $user->id)->first();
+     } else {
+         // Si l'utilisateur n'est pas connecté, la variable $rated est définie sur null
+         $rated = null;
+     }
+        // Retourne la vue 'instabook.show' avec les données nécessaires
         return view('instabook.show')->with([
             'instabook' => $instabook,
             'rated' => $rated,
