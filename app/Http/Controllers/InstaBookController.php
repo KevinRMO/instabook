@@ -14,7 +14,7 @@ class InstaBookController extends Controller
     {
         $instabooks = InstaBook::select('insta_books.*', 'genres.genre')
         ->join('genres', 'genre_id', '=', 'genres.id')
-        ->get();
+        ->paginate(4);
         return view('instabook.index', compact('instabooks'));
     }
 
@@ -161,7 +161,7 @@ class InstaBookController extends Controller
         ->orWhere('lastname', 'LIKE', "%{$search}%")
         ->orWhere('firstname', 'LIKE', "%{$search}%")
         ->orWhere('genre', 'LIKE', "%{$search}%")
-        ->get();
+        ->paginate(4);
     
         return view('instabook.index', compact('instabooks'));
     }
@@ -178,9 +178,4 @@ class InstaBookController extends Controller
         return redirect()->route('instabook.index');
     }
 
-<<<<<<< HEAD
-    
-  
-=======
->>>>>>> b2dc6402a1e46e8f3148c4e2d271821cb5a97fa3
 }

@@ -19,5 +19,6 @@
             </article>
             <br>
         @endforeach
+        {{$instabooks->links()}}
     </div>
 @endsection
