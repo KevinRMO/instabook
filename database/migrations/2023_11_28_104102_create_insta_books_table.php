@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(Author::class)->constrained();
             $table->integer('year');
             $table->foreignIdFor(Genre::class)->constrained();
-            $table->string('content');
+            $table->string('content', 2500);
             $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
             $table->string('image_path')->nullable();

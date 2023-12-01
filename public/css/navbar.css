@@ -14,7 +14,7 @@ nav {
     height: 6rem;
     width: 100vw;
     background-color: #88aacc;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 20px grey;
     display: flex;
     z-index: 10;
 }
@@ -41,12 +41,23 @@ nav {
 }
 .nav-links li a {
     text-decoration: none;
+    border-radius: 30px;
+    padding: 10px;
+    border: 2px solid white;
     margin: 0 0.7vw;
     color: white;
 }
 .nav-links li a:hover {
-    text-decoration: underline;
-    transition: all ease-in-out .3s;
+    border: 2px solid #88aacc;
+    transition: all ease-in-out 350ms;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
 }
 .nav-links li {
     position: relative;
@@ -66,6 +77,10 @@ nav {
     cursor: pointer;
 }
 
+.search:focus {
+    outline: none;
+}
+
 .search:hover {
     border: 1.5px solid #f2f5f7;
     transition: all ease-in-out 350ms;
@@ -83,28 +98,12 @@ nav {
 .search-btn:hover {
     cursor: pointer;
 }
-/*Button filter*/
-.filtre {
-    color: white;
-    background-color: transparent;
-    border: none;
-    font-size: 1em;
-    padding: .5em;
-    border-radius: 30px;
-}
 
-.filtre:hover {
-    color: #88aacc;
-    background-color: white;
-    border-bottom: 1.5px solid #88aacc;
-    transition: all ease-in-out 350ms;
-}
-
-/*Styling Buttons*/
+/*Style des bouttons*/
 .login-button {
     color: white;
     background-color: transparent;
-    border: 1.5px solid white;
+    border: 2px solid white;
     border-radius: 2em;
     padding: 0.6rem 0.8rem;
     margin-left: 2vw;
@@ -112,26 +111,38 @@ nav {
     cursor: pointer;
 }
 .login-button:hover {
-    color: #88aacc;
-    background-color: white;
-    border: 1.5px solid #88aacc;
+    border: 2px solid #88aacc;
     transition: all ease-in-out 350ms;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
 }
 .logout-button {
     background-color: transparent;
-    border: 1.5px solid #ffffff;
+    border: 2px solid #ffffff;
     color: #ffffff;
     border-radius: 2em;
-    padding: 0.6rem 0.8rem;
+    padding: 10px;
     margin-left: 2vw;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 .logout-button:hover {
-    color: #88aacc;
-    background-color: white;
-    border: 1.5px solid #88aacc;
-    transition: all ease-in-out 0.3s;
+    border: 2px solid #88aacc;
+    transition: all ease-in-out 350ms;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
 }
 .join-button {
     color: white;

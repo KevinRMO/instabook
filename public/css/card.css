@@ -14,12 +14,6 @@ body {
     color: #000;
     font-family: "Poppins", sans-serif;
 }
-.accueil {
-    color: #88aacc;
-}
-.accueil:visited {
-    color: #88aacc;
-}
 
 /* I //////////////////////////// Page de confirmation de connexion //////////////////////////// I */
 .connected {
@@ -38,35 +32,63 @@ body {
     align-items: center;
     padding: 1.5em;
     gap: 5vh;
-    background: #595959;
+    box-shadow: -11px 11px 30px grey;
+}
+
+.accueil {
+    color: #88aacc;
+    text-decoration: none;
+    border: 3px solid #88aacc;
+    border-radius: 30px;
+    padding: 10px;
+}
+.accueil:visited {
+    color: #88aacc;
+    text-decoration: none;
+    border: 3px solid #88aacc;
+}
+
+.accueil:hover {
+    color: white;
+    border: 2px solid #88aacc;
+    transition: all ease-in-out 350ms;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
 }
 /* I //////////////////////////// Show card //////////////////////////// I */
 section.show {
-    background: #595959;
-    border-radius: 24px 24px 24px 48px;
-    padding: 48px 48px 48px 308px;
-    margin: 84px 0;
+    border-radius: 15px;
+    padding: 48px 48px 48px 48px;
+    margin: 8rem 0px 0px 10em;
     min-width: 640px;
+    color: white;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
     position: relative;
     border: 3px solid #88aacc;
+    box-shadow: -11px 11px 30px grey;
 }
 
 section.show .text-content h2 {
     margin: 0;
-    color: #88aacc;
+    color: #595959;
     transition: 0.5s;
 }
 
 section.show .text-content p {
     margin: 25px 0 24px;
-    color: #88aacc;
+    color: #595959;
 }
 section.show .text-content a {
     border: 3px solid #88aacc;
-    color: #88aacc;
+    color: #595959;
     align-self: flex-start;
     text-decoration: none;
     padding: 16px 32px;
@@ -78,12 +100,13 @@ section.show .text-content a:hover {
     color: #61dafb;
 }
 section.show .visual {
-    width: 12em;
-    height: 20em;
+    width: 25em;
+    height: 35em;
     position: absolute;
-    top: -40px;
-    left: 30px;
+    top: 0em;
+    left: -33em;
     overflow: hidden;
+    box-shadow: -20px 20px 10px grey;
 }
 section.show .visual img {
     height: 110%;
@@ -92,7 +115,7 @@ section.show .visual img {
 .destroyButton {
     border: 3px solid #88aacc;
     color: #88aacc;
-    background: #595959;
+    background: white;
     align-self: flex-start;
     text-decoration: none;
     padding: 16px 32px;
@@ -102,9 +125,16 @@ section.show .visual img {
 }
 .editButton:hover,
 .destroyButton:hover {
-    border: 3px solid white;
-    color: #61dafb;
     cursor: pointer;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
+  color: white;
 }
 .fa-solid {
     color: #88aacc;
@@ -146,7 +176,7 @@ section.card .text-content p {
     color: #747171;
 }
 section.card .text-content a {
-    border: 3px solid #747171;
+    border: 3px solid #88aacc;
     color: #747171;
     text-decoration: none;
     padding: 16px 32px;
@@ -156,7 +186,15 @@ section.card .text-content a {
 }
 section.card .text-content a:hover {
     cursor: pointer;
-    box-shadow: -10px 10px 10px grey;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
+  color: white;
 }
 section.card .visual {
     height: 30em;
