@@ -14,7 +14,7 @@ nav {
     height: 6rem;
     width: 100vw;
     background-color: #88aacc;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 20px grey;
     display: flex;
     z-index: 10;
 }
@@ -41,12 +41,24 @@ nav {
 }
 .nav-links li a {
     text-decoration: none;
+    border-radius: 30px;
+    padding: 10px;
+    border: 2px solid white;
     margin: 0 0.7vw;
     color: white;
 }
 .nav-links li a:hover {
-    text-decoration: underline;
-    transition: all ease-in-out .3s;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
+  color: white;
 }
 .nav-links li {
     position: relative;
@@ -94,13 +106,12 @@ nav {
 }
 
 .filtre:hover {
-    color: #88aacc;
-    background-color: white;
     border-bottom: 1.5px solid #88aacc;
     transition: all ease-in-out 350ms;
+    cursor: pointer;
 }
 
-/*Styling Buttons*/
+/*Style des bouttons*/
 .login-button {
     color: white;
     background-color: transparent;
@@ -113,25 +124,39 @@ nav {
 }
 .login-button:hover {
     color: #88aacc;
-    background-color: white;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
+  color: white;
     border: 1.5px solid #88aacc;
     transition: all ease-in-out 350ms;
 }
 .logout-button {
     background-color: transparent;
-    border: 1.5px solid #ffffff;
+    border: 2px solid #ffffff;
     color: #ffffff;
     border-radius: 2em;
-    padding: 0.6rem 0.8rem;
+    padding: 10px;
     margin-left: 2vw;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 .logout-button:hover {
-    color: #88aacc;
-    background-color: white;
-    border: 1.5px solid #88aacc;
-    transition: all ease-in-out 0.3s;
+    color: white;
+    transition: all ease-in-out 0.5s;
+    box-shadow: -3px 3px 15px grey;
+    background: linear-gradient(
+    to top right,
+    #595959 0%,
+    #a0a0a0 15%,
+    #88aacc 85%,
+    white 100%
+  );
 }
 .join-button {
     color: white;

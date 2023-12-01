@@ -42,9 +42,11 @@ class InstaBookController extends Controller
         $genreId = $request->input('genre');
 
         $image = $request->file('image_path');
-        $imageName = time() . '.' . $image->getClientOriginalExtension();
-        $image_path = $image->storeAs( $imageName,'public/images' );
-    
+        $originalName = $image->getClientOriginalName();
+        $extension =$image->getClientOriginalExtension();
+        $imageName = time() . '_' . pathinfo($originalName, PATHINFO_FILENAME) . '.' . $extension;
+        $image_path = $image->storeAs( 'images', $imageName,'public' );
+        $request->image_path->move(public_path('images'), $imageName);
 
         // Utiliser l'authentification pour obtenir l'utilisateur connecté et créer un livre associé à cet utilisateur
         $user = auth()->user();
