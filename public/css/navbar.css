@@ -159,6 +159,28 @@ nav {
     transition: all ease-in-out 350ms;
 }
 
+/*--------Footer pour crééer un livre--------*/
+.footerNavCreate {
+    position: absolute;
+    bottom: 0;
+}
+
+/*--------Footer pour voir en détail un livre--------*/
+.footerNavShow {
+    position: absolute;
+    bottom: 0;
+}
+
+/*--------Footer de la page index--------*/
+.footerNavIndex {
+}
+
+/*--------Footer couleur texte--------*/
+.infoFooter {
+    color: #f2f5f7;
+    font-size: 0.7em;
+}
+
 /*Styling Hamburger Icon*/
 .hamburger div {
     width: 30px;
