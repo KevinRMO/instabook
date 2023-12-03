@@ -19,6 +19,7 @@
             </article>
             <br>
         @endforeach
+        {{-- <div class="pagination">{{$instabooks->links()}}</div> --}}
     </div>
             <footer>
         <nav class="footerNavIndex" >
