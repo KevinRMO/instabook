@@ -257,6 +257,9 @@ nav {
     .footerNavShow {
         display: none;
     }
+    .footerNavCreate {
+        display: none;
+    }
 }
 /*Stying for medium screens*/
 @media screen and (max-width: 920px) {
