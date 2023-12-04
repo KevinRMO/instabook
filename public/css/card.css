@@ -237,6 +237,38 @@ article {
     max-width: calc(920px + 248px);
     min-width: calc(640px + 50px);
 }
+/* I //////////////////////////// Petits écrans ////////////////////////// I */
+
+@media all and (max-width: 1550px) {
+    body {
+        font-size: 14px;
+    }
+    section.show .visual {
+        width: 20em;
+        height: 30em;
+        position: absolute;
+        top: -5em;
+        left: -22em;
+        overflow: hidden;
+        box-shadow: -20px 20px 10px grey;
+    }
+}
+@media all and (max-width: 1500px) {
+    body {
+        font-size: 16px;
+    }
+    section.show .visual {
+        width: 20em;
+        height: 30em;
+        position: absolute;
+        top: -3em;
+        left: -22em;
+        overflow: hidden;
+        box-shadow: -20px 20px 10px grey;
+    }
+}
+
+
 
 /* I //////////////////////////// Responsive ////////////////////////// I */
 
