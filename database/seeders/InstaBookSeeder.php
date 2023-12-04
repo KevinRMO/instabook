@@ -129,6 +129,7 @@ class InstaBookSeeder extends Seeder
                 'year' => $book['year'],
                 'content' => $book['content'],
                 'user_id' => $user_id,
+                'image_path' => $book['image_path'],
                 // 'rate_id' => $rate_id,
             ]);
         }
