@@ -63,3 +63,27 @@
     background-color: #88aacc;
     color: #fff;
 }
+
+@media all and (min-width: 721px) and (max-width: 1100px) {
+    .pagination-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        bottom: 0;
+        background-color: white;
+        box-shadow: none;
+        justify-content: center;
+    }
+}
+
+@media all and (max-width: 721px) {
+    .pagination-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        bottom: 0;
+        background-color: white;
+        box-shadow: none;
+        justify-content: center;
+    }
+}

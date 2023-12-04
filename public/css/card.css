@@ -241,16 +241,54 @@ article {
 /* I //////////////////////////// Responsive ////////////////////////// I */
 
 @media all and (min-width: 721px) and (max-width: 1100px) {
-    article {
-        width: 100%;
-        min-width: 100%;
+    .card {
+        padding-top: 16vh!important;
     }
     section.card {
-        margin-top: 16vh;
-        min-width: 90%;
-    }
-    section.card .text-content {
+        margin: 64px 0;
         width: 100%;
+        padding: 88px 36px 36px;
+        flex-direction: column;
+        border-radius: 24px;
+    }
+    section.card .text-content h3 {
+        max-width: calc(100% - 150px);
+        font-size: 1em;
+    }
+    section.card .text-content p,
+    section.card .text-content a {
+        font-size: 0.8em;
+    }
+    section.card .visual img {
+        width: 100%;
+        height: auto;
+    }
+    article{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: calc(920px + 248px);
+        min-width: 0px!important;
+    }
+    section.show {
+        border-radius: 15px;
+        padding: 48px 48px 48px 48px;
+        margin: 16vh 0px 0px 0px!important;
+        width: 95%;
+        color: white;
+        display: flex;
+        position: unset;
+        flex-direction: column;
+        border: 3px solid #88aacc;
+        box-shadow: -11px 11px 30px grey;
+    }
+    section.show .visual {
+       display: none;
+    }
+    .parent {
+        display: flex;
+        flex-direction: column!important;
     }
 }
 @media all and (max-width: 720px) {
