@@ -62,3 +62,15 @@ label {
 .btn:hover {
     box-shadow: -10px 10px 10px grey;
 }
+
+@media all and (max-width: 720px) {
+.my-form {
+    background-color: white;
+    width: 95%;
+    margin: auto;
+    padding: 4vh;
+    border: 3px solid #88aacc;
+    border-radius: 20px;
+    box-shadow: -15px 15px 30px grey;
+}
+}

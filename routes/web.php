@@ -15,9 +15,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/instabooks/{instabook}', [InstaBookController::class, 'show'])->name('instabook.show');
+
 Route::middleware('auth')->group(function () {
     Route::post('/instabook/{instabook}/storeRate', [InstaBookController::class, 'storeRate'])->name('instabook.storeRate');
-    Route::resource('instabook', InstaBookController::class);
+    Route::resource('instabook', InstaBookController::class)->except('show');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
